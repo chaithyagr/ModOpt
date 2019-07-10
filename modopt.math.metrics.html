@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.1.3.1.3. modopt.math.metrics module &mdash; modopt 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.1.3.1.4. modopt.math.stats module" href="modopt.math.stats.html" />
+    <link rel="prev" title="2.1.3.1.2. modopt.math.matrix module" href="modopt.math.matrix.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> modopt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="examples.html">1. ModOpt Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modopt.html">2. modopt package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="modopt.html#subpackages">2.1. Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="modopt.base.html">2.1.1. modopt.base package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modopt.interface.html">2.1.2. modopt.interface package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="modopt.math.html">2.1.3. modopt.math package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modopt.opt.html">2.1.4. modopt.opt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modopt.plot.html">2.1.5. modopt.plot package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modopt.signal.html">2.1.6. modopt.signal package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modopt.html#submodules">2.2. Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modopt.info.html">2.2.1. modopt.info module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modopt.html#module-modopt">2.3. Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">modopt</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modopt.html">2. modopt package</a> &raquo;</li>
+        
+          <li><a href="modopt.math.html">2.1.3. modopt.math package</a> &raquo;</li>
+        
+      <li>2.1.3.1.3. modopt.math.metrics module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modopt.math.metrics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-modopt.math.metrics">
+<span id="modopt-math-metrics-module"></span><h1>2.1.3.1.3. modopt.math.metrics module<a class="headerlink" href="#module-modopt.math.metrics" title="Permalink to this headline">¶</a></h1>
+<p>METRICS</p>
+<p>This module contains classes of different metric functions for optimization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Benoir Sarthou</p>
+</dd>
+</dl>
+<dl class="function">
+<dt id="modopt.math.metrics.min_max_normalize">
+<code class="sig-prename descclassname">modopt.math.metrics.</code><code class="sig-name descname">min_max_normalize</code><span class="sig-paren">(</span><em class="sig-param">img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/math/metrics.html#min_max_normalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.math.metrics.min_max_normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Centre and normalize a given array.</p>
+<p>img: np.ndarray</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="modopt.math.metrics._preprocess_input">
+<code class="sig-prename descclassname">modopt.math.metrics.</code><code class="sig-name descname">_preprocess_input</code><span class="sig-paren">(</span><em class="sig-param">test</em>, <em class="sig-param">ref</em>, <em class="sig-param">mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/math/metrics.html#_preprocess_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.math.metrics._preprocess_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper to the metric</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref</strong> (<em>np.ndarray</em>) – the reference image</p></li>
+<li><p><strong>test</strong> (<em>np.ndarray</em>) – the tested image</p></li>
+<li><p><strong>mask</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – the mask for the ROI</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Compute the metric only on magnetude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ssim</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a>, the snr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="modopt.math.metrics.ssim">
+<code class="sig-prename descclassname">modopt.math.metrics.</code><code class="sig-name descname">ssim</code><span class="sig-paren">(</span><em class="sig-param">test</em>, <em class="sig-param">ref</em>, <em class="sig-param">mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/math/metrics.html#ssim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.math.metrics.ssim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structural Similarity (SSIM)</p>
+<p>Calculate the SSIM between a test image and a reference image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref</strong> (<em>np.ndarray</em>) – the reference image</p></li>
+<li><p><strong>test</strong> (<em>np.ndarray</em>) – the tested image</p></li>
+<li><p><strong>mask</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – the mask for the ROI</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Compute the metric only on magnetude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>ssim</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a>, the snr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="modopt.math.metrics.snr">
+<code class="sig-prename descclassname">modopt.math.metrics.</code><code class="sig-name descname">snr</code><span class="sig-paren">(</span><em class="sig-param">test</em>, <em class="sig-param">ref</em>, <em class="sig-param">mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/math/metrics.html#snr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.math.metrics.snr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal-to-Noise Ratio (SNR)</p>
+<p>Calculate the SNR between a test image and a reference image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref</strong> (<em>np.ndarray</em>) – the reference image</p></li>
+<li><p><strong>test</strong> (<em>np.ndarray</em>) – the tested image</p></li>
+<li><p><strong>mask</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – the mask for the ROI</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Compute the metric only on magnetude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>snr</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a>, the snr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="modopt.math.metrics.psnr">
+<code class="sig-prename descclassname">modopt.math.metrics.</code><code class="sig-name descname">psnr</code><span class="sig-paren">(</span><em class="sig-param">test</em>, <em class="sig-param">ref</em>, <em class="sig-param">mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/math/metrics.html#psnr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.math.metrics.psnr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Peak Signal-to-Noise Ratio (PSNR)</p>
+<p>Calculate the PSNR between a test image and a reference image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref</strong> (<em>np.ndarray</em>) – the reference image</p></li>
+<li><p><strong>test</strong> (<em>np.ndarray</em>) – the tested image</p></li>
+<li><p><strong>mask</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – the mask for the ROI</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Compute the metric only on magnetude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>psnr</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a>, the psnr</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="modopt.math.metrics.mse">
+<code class="sig-prename descclassname">modopt.math.metrics.</code><code class="sig-name descname">mse</code><span class="sig-paren">(</span><em class="sig-param">test</em>, <em class="sig-param">ref</em>, <em class="sig-param">mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/math/metrics.html#mse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.math.metrics.mse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean Squared Error (MSE)</p>
+<p>Calculate the MSE between a test image and a reference image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref</strong> (<em>np.ndarray</em>) – the reference image</p></li>
+<li><p><strong>test</strong> (<em>np.ndarray</em>) – the tested image</p></li>
+<li><p><strong>mask</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – the mask for the ROI</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Compute the metric only on magnetude.</p>
+<p>1/N * <a href="#id1"><span class="problematic" id="id2">|</span></a>ref - test|_2</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>mse</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a>, the mse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="modopt.math.metrics.nrmse">
+<code class="sig-prename descclassname">modopt.math.metrics.</code><code class="sig-name descname">nrmse</code><span class="sig-paren">(</span><em class="sig-param">test</em>, <em class="sig-param">ref</em>, <em class="sig-param">mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/math/metrics.html#nrmse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.math.metrics.nrmse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return NRMSE</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref</strong> (<em>np.ndarray</em>) – the reference image</p></li>
+<li><p><strong>test</strong> (<em>np.ndarray</em>) – the tested image</p></li>
+<li><p><strong>mask</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – the mask for the ROI</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Compute the metric only on magnitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>nrmse</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a>, the nrmse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modopt.math.stats.html" class="btn btn-neutral float-right" title="2.1.3.1.4. modopt.math.stats module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modopt.math.matrix.html" class="btn btn-neutral float-left" title="2.1.3.1.2. modopt.math.matrix module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Samuel Farrens
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
