@@ -44,8 +44,6 @@ The following notation is used to implement the algorithms:
 
 """
 
-from __future__ import division, print_function
-from builtins import range, zip
 from inspect import getmro
 from progressbar import ProgressBar
 import numpy as np
@@ -194,7 +192,7 @@ class SetUp(Observable):
             if self.idx % self.metric_call_period == 0:
                 self._compute_metrics()
 
-            if self.converge:
+            if self.converge and self.verbose:
                 print(' - Converged!')
                 break
 
@@ -270,7 +268,8 @@ class FISTA(object):
     ]
 
     def __init__(self, restart_strategy=None, min_beta=None, s_greedy=None,
-                 xi_restart=None, a_cd=None, p_lazy=1, q_lazy=1, r_lazy=4):
+                 xi_restart=None, a_cd=None, p_lazy=1, q_lazy=1, r_lazy=4,
+                 **kwargs):
 
         if isinstance(a_cd, type(None)):
             self.mode = 'regular'
