@@ -1022,7 +1022,7 @@ class Condat(SetUp):
 
     """
 
-    def __init__(self, x, y, grad, prox, prox_dual, linear=None, cost='auto',
+    def __init__(self, x, y, obs, grad, prox, prox_dual, linear=None, cost='auto',
                  reweight=None, rho=0.5, sigma=1.0, tau=1.0, rho_update=None,
                  sigma_update=None, tau_update=None, auto_iterate=True,
                  max_iter=150, n_rewightings=1, metric_call_period=5,
@@ -1036,6 +1036,7 @@ class Condat(SetUp):
         (self._check_input_data(data) for data in (x, y))
         self._x_old = self.xp.copy(x)
         self._y_old = self.xp.copy(y)
+        self.obs = self.xp.copy(obs)
 
         # Set the algorithm operators
         (self._check_operator(operator) for operator in (grad, prox, prox_dual,
@@ -1104,23 +1105,17 @@ class Condat(SetUp):
 
         """
         # Step 1 from eq.9.
-        self._grad.get_grad(self._x_old)
-
-        x_prox = self._prox.op(self._x_old - self._tau * self._grad.grad -
-                               self._tau * self._linear.adj_op(self._y_old))
-
-        # Step 2 from eq.9.
-        y_temp = (self._y_old + self._sigma *
-                  self._linear.op(2 * x_prox - self._x_old))
-
-        y_prox = (y_temp - self._sigma * self._prox_dual.op(y_temp /
+        y_temp = self._y_old + self._sigma * (self._linear.op(self._x_old) - self.obs)
+        
+        self._y_new = (y_temp - self._sigma * self._prox_dual.op(y_temp /
                   self._sigma, extra_factor=(1.0 / self._sigma)))
 
-        # Step 3 from eq.9.
-        self._x_new = self._rho * x_prox + (1 - self._rho) * self._x_old
-        self._y_new = self._rho * y_prox + (1 - self._rho) * self._y_old
+        x_prox = self._prox.op(self._x_old - self._tau * self._linear.adj_op(self._y_new))
 
-        del x_prox, y_prox, y_temp
+        # Step 3 from eq.9.
+        self._x_new = x_prox + self._rho * (x_prox - self._x_old)
+
+        del x_prox, y_temp
 
         # Update old values for next iteration.
         self.xp.copyto(self._x_old, self._x_new)
