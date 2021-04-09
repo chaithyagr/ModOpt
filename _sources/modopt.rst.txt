@@ -1,10 +1,17 @@
-modopt package
-==============
+modopt
+======
+
+
+.. automodule:: modopt
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
    modopt.base
    modopt.interface
@@ -12,18 +19,3 @@ Subpackages
    modopt.opt
    modopt.plot
    modopt.signal
-
-Submodules
-----------
-
-.. toctree::
-
-   modopt.info
-
-Module contents
----------------
-
-.. automodule:: modopt
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,188 +1,121 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>2.1.4.1.1. modopt.opt.algorithms module &mdash; modopt 1.0 documentation</title>
-  
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.1.4.1.2. modopt.opt.cost module" href="modopt.opt.cost.html" />
-    <link rel="prev" title="2.1.4. modopt.opt package" href="modopt.opt.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="index.html" class="icon icon-home"> modopt
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                1.0
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="Docutils 0.17: http://docutils.sourceforge.net/" name="generator"/>
+<title>
+      modopt.opt.algorithms | modopt v1.5.0
+    </title>
+<link href="_static/pygments.css" rel="stylesheet"/>
+<link href="_static/theme.css" rel="stylesheet"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="modopt.opt.cost.html" rel="next" title="modopt.opt.cost"/>
+<link href="modopt.opt.html" rel="prev" title="modopt.opt"/>
+</head><body class="text-gray-900 antialiased min-h-screen md:h-screen flex flex-col">
+<a class="block text-xl bg-white px-8 py-4 z-20 absolute top-0 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#modopt-opt-algorithms" title="Skip navigation links">Skip to content</a>
+<header class="md:sticky top-0 bg-gray-900 shadow-md flex md:flex-row justify-between items-center z-10"><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 tooltipped tooltipped-se" href="index.html">
+<h2 class="text-xl text-gray-100 mx-5 py-4">modopt v1.5.0</h2>
+</a><form action="search.html" class="hidden md:flex my-auto mx-5 justify-between items-center print:hidden" id="searchbox" method="get">
+<input aria-label="Search the docs" class="p-2 flex-1 focus:bg-yellow-100" id="search-input" name="q" placeholder="Search the docs" style="width: 300px;" type="search"/>
+<button aria-label="Get search results" class="p-2 text-white bg-gray-700 hover:bg-gray-200 hover:text-pink-500 focus:bg-gray-200 focus:text-pink-500 tooltipped tooltipped-sw">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+</form>
+</header>
+<div class="md:overflow-hidden flex flex-col md:flex-row flex-1"><nav class="h-full fixed md:relative inset-y-0 left-0 z-20 md:z-0 bg-white text-gray-700 border-r overflow-x-hidden pt-16 print:hidden flex flex-col" data-menu="closed" role="navigation" style="width: 270px;">
+<div class="nav-toc"><p class="caption">Getting Started</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="about.html">About</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="installation.html">Installation</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="dependencies.html">Dependencies</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="quickstart.html">Quickstart Tutorial</a></div></li>
+</ul>
+<p class="caption">API Documentation</p>
+<ul class="current">
+<li class="toctree-l1 current expanded"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.html">modopt</a></div><ul class="current">
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.base.html">modopt.base</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.backend.html">modopt.base.backend</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.np_adjust.html">modopt.base.np_adjust</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.observable.html">modopt.base.observable</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.transform.html">modopt.base.transform</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.types.html">modopt.base.types</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.wrappers.html">modopt.base.wrappers</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.interface.html">modopt.interface</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.interface.errors.html">modopt.interface.errors</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.interface.log.html">modopt.interface.log</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.math.html">modopt.math</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.convolve.html">modopt.math.convolve</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.matrix.html">modopt.math.matrix</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.metrics.html">modopt.math.metrics</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.stats.html">modopt.math.stats</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2 current expanded"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.opt.html">modopt.opt</a></div><ul class="current">
+<li class="toctree-l3 current expanded"><div class="nav-link"><a class="current reference internal" href="#">modopt.opt.algorithms</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.cost.html">modopt.opt.cost</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.gradient.html">modopt.opt.gradient</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.linear.html">modopt.opt.linear</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.proximity.html">modopt.opt.proximity</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.reweight.html">modopt.opt.reweight</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.plot.html">modopt.plot</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.plot.cost_plot.html">modopt.plot.cost_plot</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.signal.html">modopt.signal</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.filter.html">modopt.signal.filter</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.noise.html">modopt.signal.noise</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.positivity.html">modopt.signal.positivity</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.svd.html">modopt.signal.svd</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.validation.html">modopt.signal.validation</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.wavelet.html">modopt.signal.wavelet</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="z_ref.html">References</a></div></li>
+</ul>
+<p class="caption">Examples</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="plugin_example.html">Plugin Example</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="notebooks.html">Notebooks</a></div><ul class="simple">
+</ul>
+</li>
+</ul>
+<p class="caption">Guidelines</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="contributing.html">Contributing</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="citing.html">Citing this Package</a></div></li>
+</ul>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="examples.html">1. ModOpt Examples</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modopt.html">2. modopt package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="modopt.html#subpackages">2.1. Subpackages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="modopt.base.html">2.1.1. modopt.base package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.interface.html">2.1.2. modopt.interface package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.math.html">2.1.3. modopt.math package</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="modopt.opt.html">2.1.4. modopt.opt package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.plot.html">2.1.5. modopt.plot package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.signal.html">2.1.6. modopt.signal package</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="modopt.html#submodules">2.2. Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="modopt.info.html">2.2.1. modopt.info module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="modopt.html#module-modopt">2.3. Module contents</a></li>
-</ul>
-</li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">modopt</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="modopt.html">2. modopt package</a> &raquo;</li>
-        
-          <li><a href="modopt.opt.html">2.1.4. modopt.opt package</a> &raquo;</li>
-        
-      <li>2.1.4.1.1. modopt.opt.algorithms module</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/modopt.opt.algorithms.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="module-modopt.opt.algorithms">
-<span id="modopt-opt-algorithms-module"></span><h1>2.1.4.1.1. modopt.opt.algorithms module<a class="headerlink" href="#module-modopt.opt.algorithms" title="Permalink to this headline">¶</a></h1>
-<p>OPTIMISATION ALGOTITHMS</p>
+<button aria-label="Close menu" class="text-4xl text-gray-800 p-4 bottom-0 hover:text-pink-500 md:hidden focus:text-pink-500 self-center" id="closeNavBtn" title="Close menu">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="overflow-y-auto md:w-full flex flex-col flex-1" id="main-wrapper">
+<main class="px-5 md:ml-fluid flex-1" role="main">
+<section id="module-modopt.opt.algorithms">
+<span id="modopt-opt-algorithms"></span><h1>modopt.opt.algorithms<a aria-label="Copy link to section: modopt.opt.algorithms." class="headerlink tooltipped tooltipped-ne" href="#module-modopt.opt.algorithms" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h1>
+<p>OPTIMISATION ALGOTITHMS.</p>
 <p>This module contains class implementations of various optimisation algoritms.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Author</dt>
-<dd class="field-odd"><p>Samuel Farrens &lt;<a class="reference external" href="mailto:samuel&#46;farrens&#37;&#52;&#48;cea&#46;fr">samuel<span>&#46;</span>farrens<span>&#64;</span>cea<span>&#46;</span>fr</a>&gt;,
-Zaccharie Ramzi &lt;<a class="reference external" href="mailto:zaccharie&#46;ramzi&#37;&#52;&#48;cea&#46;fr">zaccharie<span>&#46;</span>ramzi<span>&#64;</span>cea<span>&#46;</span>fr</a>&gt;</p>
+<dt class="field-odd">Authors</dt>
+<dd class="field-odd"><p>Samuel Farrens &lt;<a class="reference external" href="mailto:samuel.farrens%40cea.fr">samuel<span>.</span>farrens<span>@</span>cea<span>.</span>fr<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>&gt;,
+Zaccharie Ramzi &lt;<a class="reference external" href="mailto:zaccharie.ramzi%40cea.fr">zaccharie<span>.</span>ramzi<span>@</span>cea<span>.</span>fr<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>&gt;</p>
 </dd>
+<dt class="field-even">Notes</dt>
+<dd class="field-even"><p></p></dd>
 </dl>
-<p class="rubric">Notes</p>
 <p>Input classes must have the following properties:</p>
 <blockquote>
 <div><ul class="simple">
@@ -191,13 +124,13 @@ Zaccharie Ramzi &lt;<a class="reference external" href="mailto:zaccharie&#46;ram
 <p>Must have the following methods:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">get_grad()</span></code> - calculate the gradient</p></li>
+<li><p><code class="docutils literal notranslate">get_grad()</code> - calculate the gradient</p></li>
 </ul>
 </div></blockquote>
 <p>Must have the following variables:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">grad</span></code> - the gradient</p></li>
+<li><p><code class="docutils literal notranslate">grad</code> - the gradient</p></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
@@ -206,8 +139,8 @@ Zaccharie Ramzi &lt;<a class="reference external" href="mailto:zaccharie&#46;ram
 <p>Must have the following methods:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">op()</span></code> - operator</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">adj_op()</span></code> - adjoint operator</p></li>
+<li><p><code class="docutils literal notranslate">op()</code> - operator</p></li>
+<li><p><code class="docutils literal notranslate">adj_op()</code> - adjoint operator</p></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
@@ -216,7 +149,7 @@ Zaccharie Ramzi &lt;<a class="reference external" href="mailto:zaccharie&#46;ram
 <p>Must have the following methods:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">op()</span></code> - operator</p></li>
+<li><p><code class="docutils literal notranslate">op()</code> - operator</p></li>
 </ul>
 </div></blockquote>
 </div></blockquote>
@@ -229,179 +162,245 @@ Zaccharie Ramzi &lt;<a class="reference external" href="mailto:zaccharie&#46;ram
 <li><p>x_temp is used for intermediate operations.</p></li>
 </ul>
 </div></blockquote>
-<dl class="class">
-<dt id="modopt.opt.algorithms.SetUp">
-<em class="property">class </em><code class="sig-prename descclassname">modopt.opt.algorithms.</code><code class="sig-name descname">SetUp</code><span class="sig-paren">(</span><em class="sig-param">metric_call_period=5</em>, <em class="sig-param">metrics={}</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">progress=True</em>, <em class="sig-param">**dummy_kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.SetUp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="modopt.base.observable.html#modopt.base.observable.Observable" title="modopt.base.observable.Observable"><code class="xref py py-class docutils literal notranslate"><span class="pre">modopt.base.observable.Observable</span></code></a></p>
-<p>Algorithm Set-Up</p>
+<dl class="py class code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp">
+<em class="property">class </em><code class="sig-name descname">SetUp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metric_call_period</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">metrics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">progress</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">step_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_gpu</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">dummy_kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Bases: <a class="reference internal" href="modopt.base.observable.html#modopt.base.observable.Observable" title="modopt.base.observable.Observable"><code class="xref py py-class docutils literal notranslate">modopt.base.observable.Observable</code></a></p>
+<p>Algorithm Set-Up.</p>
 <p>This class contains methods for checking the set-up of an optimisation
-algotithm and produces warnings if they do not comply</p>
-<dl class="method">
-<dt id="modopt.opt.algorithms.SetUp.any_convergence_flag">
-<code class="sig-name descname">any_convergence_flag</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp.any_convergence_flag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.SetUp.any_convergence_flag" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return if any matrices values matched the convergence criteria.</p>
+algotithm and produces warnings if they do not comply.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metric_call_period</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Metric call period (default is <code class="docutils literal notranslate">5</code>)</p></li>
+<li><p><strong>metrics</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Metrics to be used (default is <code class="docutils literal notranslate">\{\}</code>)</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option for verbose output (default is <code class="docutils literal notranslate">False</code>)</p></li>
+<li><p><strong>progress</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to display progress bar (default is <code class="docutils literal notranslate">True</code>)</p></li>
+<li><p><strong>step_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Generic step size parameter to override default algorithm
+parameter name (<cite>e.g.</cite> <cite>step_size</cite> will override the value set for
+<cite>beta_param</cite> in <cite>ForwardBackward</cite>)</p></li>
+<li><p><strong>use_gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to use available GPU</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp.metrics">
+<em class="property">property </em><code class="sig-name descname">metrics</code><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp.metrics" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Metrics.</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.SetUp._check_input_data">
-<code class="sig-name descname">_check_input_data</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._check_input_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.SetUp._check_input_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check Input Data Type</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp.any_convergence_flag">
+<code class="sig-name descname">any_convergence_flag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp.any_convergence_flag"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp.any_convergence_flag" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Check convergence flag.</p>
+<p>Return if any matrices values matched the convergence criteria.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if any convergence criteria met</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp.copy_data">
+<code class="sig-name descname">copy_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp.copy_data"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp.copy_data" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Copy Data.</p>
+<p>Set directive for copying data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input_data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Input data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Copy of input data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)">numpy.ndarray<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp._check_input_data">
+<code class="sig-name descname">_check_input_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._check_input_data"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp._check_input_data" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Check input data type.</p>
 <p>This method checks if the input data is a numpy array</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>np.ndarray</em>) – Input data array</p>
+<dd class="field-odd"><p><strong>input_data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Input data array</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.7)"><strong>TypeError</strong></a> – For invalid input type</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.9)"><strong>TypeError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – For invalid input type</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.SetUp._check_param">
-<code class="sig-name descname">_check_param</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">param</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._check_param"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.SetUp._check_param" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check Algorithm Parameters</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp._check_param">
+<code class="sig-name descname">_check_param</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">param_val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._check_param"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp._check_param" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Check algorithm parameters.</p>
 <p>This method checks if the specified algorithm parameters are floats</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Parameter value</p>
+<dd class="field-odd"><p><strong>param_val</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Parameter value</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.7)"><strong>TypeError</strong></a> – For invalid input type</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.9)"><strong>TypeError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – For invalid input type</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.SetUp._check_param_update">
-<code class="sig-name descname">_check_param_update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">param_update</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._check_param_update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.SetUp._check_param_update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check Algorithm Parameters</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp._check_param_update">
+<code class="sig-name descname">_check_param_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">param_update</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._check_param_update"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp._check_param_update" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Check algorithm parameter update methods.</p>
 <p>This method checks if the specified algorithm parameters are floats</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>param_update</strong> (<em>function</em>) – Callable function</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.7)"><strong>TypeError</strong></a> – For invalid input type</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.9)"><strong>TypeError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – For invalid input type</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.SetUp._check_operator">
-<code class="sig-name descname">_check_operator</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">operator</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._check_operator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.SetUp._check_operator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check Set-Up</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp._check_operator">
+<code class="sig-name descname">_check_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._check_operator"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp._check_operator" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Check set-Up.</p>
 <p>This method checks algorithm operator against the expected parent
 classes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>operator</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Algorithm operator to check</p>
+<dd class="field-odd"><p><strong>operator</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Algorithm operator to check</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.SetUp._compute_metrics">
-<code class="sig-name descname">_compute_metrics</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._compute_metrics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.SetUp._compute_metrics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute metrics during iteration</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp._compute_metrics">
+<code class="sig-name descname">_compute_metrics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._compute_metrics"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp._compute_metrics" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Compute metrics during iteration.</p>
 <p>This method create the args necessary for metrics computation, then
 call the observers to compute metrics</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.SetUp._iterations">
-<code class="sig-name descname">_iterations</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">max_iter</em>, <em class="sig-param">bar=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._iterations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.SetUp._iterations" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.SetUp._run_alg">
-<code class="sig-name descname">_run_alg</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">max_iter</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._run_alg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.SetUp._run_alg" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run Algorithm</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp._iterations">
+<code class="sig-name descname">_iterations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_iter</span></em>, <em class="sig-param"><span class="n">progbar</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._iterations"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp._iterations" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Iterate method.</p>
+<p>Iterate the update step of the given algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Maximum number of iterations</p></li>
+<li><p><strong>progbar</strong> (<em>progressbar.ProgressBar</em>) – Progress bar (default is <code class="docutils literal notranslate">None</code>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.SetUp._run_alg">
+<code class="sig-name descname">_run_alg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_iter</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#SetUp._run_alg"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.SetUp._run_alg" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Run algorithm.</p>
 <p>Run the update step of a given algorithm up to the maximum number of
 iterations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Maximum number of iterations</p>
+<dd class="field-odd"><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Maximum number of iterations</p>
 </dd>
 </dl>
 </dd></dl>
-
 </dd></dl>
-
-<dl class="class">
-<dt id="modopt.opt.algorithms.FISTA">
-<em class="property">class </em><code class="sig-prename descclassname">modopt.opt.algorithms.</code><code class="sig-name descname">FISTA</code><span class="sig-paren">(</span><em class="sig-param">restart_strategy=None</em>, <em class="sig-param">min_beta=None</em>, <em class="sig-param">s_greedy=None</em>, <em class="sig-param">xi_restart=None</em>, <em class="sig-param">a_cd=None</em>, <em class="sig-param">p_lazy=1</em>, <em class="sig-param">q_lazy=1</em>, <em class="sig-param">r_lazy=4</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.FISTA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py class code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.FISTA">
+<em class="property">class </em><code class="sig-name descname">FISTA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">restart_strategy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">min_beta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">s_greedy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xi_restart</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">a_cd</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">p_lazy</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">q_lazy</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">r_lazy</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.FISTA" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate">object</code><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
+<p>FISTA.</p>
 <p>This class is inherited by optimisation classes to speed up convergence
-The parameters for the modified FISTA are as described in [L2018]
-(p, q, r)_lazy or in [C2015] (a_cd).
-The restarting strategies are those described in [L2018], algorithms 4-5.</p>
+The parameters for the modified FISTA are as described in <span id="id1">[<a class="reference internal" href="z_ref.html#id9">LLS18</a>]</span>
+(p, q, r)_lazy or in <span id="id2">[<a class="reference internal" href="z_ref.html#id4">CD15</a>]</span> (a_cd).
+The restarting strategies are those described in <span id="id3">[<a class="reference internal" href="z_ref.html#id9">LLS18</a>]</span>,
+algorithms 4-5.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>restart_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a>) – name of the restarting strategy. If None, there is no restarting.
-Defaults to None.</p></li>
-<li><p><strong>min_beta</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a>) – the minimum beta when using the greedy restarting strategy.
-Defaults to None.</p></li>
-<li><p><strong>s_greedy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><em>None.</em>) – parameter for the safeguard comparison in the greedy restarting
+<li><p><strong>restart_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – name of the restarting strategy. If None, there is no restarting.
+(Default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>min_beta</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – the minimum beta when using the greedy restarting strategy.
+(Default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>s_greedy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – parameter for the safeguard comparison in the greedy restarting
 strategy. It has to be &gt; 1.
-Defaults to None.</p></li>
-<li><p><strong>xi_restart</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><em>None.</em>) – mutlitplicative parameter for the update of beta in the greedy
+(Default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>xi_restart</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – mutlitplicative parameter for the update of beta in the greedy
 restarting strategy and for the update of r_lazy in the adaptive
 restarting strategies. It has to be &gt; 1.
-Defaults to None.</p></li>
-<li><p><strong>a_cd</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a>) – parameter for the update of lambda in Chambolle-Dossal mode. If None
+(Default is None)</p></li>
+<li><p><strong>a_cd</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – parameter for the update of lambda in Chambolle-Dossal mode. If None
 the mode of the algorithm is the regular FISTA, else the mode is
 Chambolle-Dossal. It has to be &gt; 2.</p></li>
-<li><p><strong>p_lazy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – parameter for the update of lambda in Fista-Mod. It has to be in
+<li><p><strong>p_lazy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – parameter for the update of lambda in Fista-Mod. It has to be in
 ]0, 1].</p></li>
-<li><p><strong>q_lazy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – parameter for the update of lambda in Fista-Mod. It has to be in
+<li><p><strong>q_lazy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – parameter for the update of lambda in Fista-Mod. It has to be in
 ]0, (2-p)**2].</p></li>
-<li><p><strong>r_lazy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – parameter for the update of lambda in Fista-Mod. It has to be in
+<li><p><strong>r_lazy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – parameter for the update of lambda in Fista-Mod. It has to be in
 ]0, 4].</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="modopt.opt.algorithms.FISTA._check_restart_params">
-<code class="sig-name descname">_check_restart_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">restart_strategy</em>, <em class="sig-param">min_beta</em>, <em class="sig-param">s_greedy</em>, <em class="sig-param">xi_restart</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA._check_restart_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.FISTA._check_restart_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check restarting parameters</p>
+<dl class="py attribute code-definition">
+<dt id="modopt.opt.algorithms.FISTA._restarting_strategies">
+<code class="sig-name descname">_restarting_strategies</code><em class="property"> = ('adaptive', 'adaptive-i', 'adaptive-1', 'adaptive-ii', 'adaptive-2', 'greedy', None)</em><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.FISTA._restarting_strategies" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></dt>
+<dd>
+</dd></dl>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.FISTA._check_restart_params">
+<code class="sig-name descname">_check_restart_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">restart_strategy</span></em>, <em class="sig-param"><span class="n">min_beta</span></em>, <em class="sig-param"><span class="n">s_greedy</span></em>, <em class="sig-param"><span class="n">xi_restart</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA._check_restart_params"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.FISTA._check_restart_params" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Check restarting parameters.</p>
 <p>This method checks that the restarting parameters are set and satisfy
 the correct assumptions. It also checks that the current mode is
 regular (as opposed to CD for now).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>restart_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a>) – name of the restarting strategy. If None, there is no restarting.
-Defaults to None.</p></li>
-<li><p><strong>min_beta</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a>) – the minimum beta when using the greedy restarting strategy.
-Defaults to None.</p></li>
-<li><p><strong>s_greedy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><em>None.</em>) – parameter for the safeguard comparison in the greedy restarting
+<li><p><strong>restart_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – name of the restarting strategy. If None, there is no restarting.
+(Default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>min_beta</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – the minimum beta when using the greedy restarting strategy.
+(Default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>s_greedy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – parameter for the safeguard comparison in the greedy restarting
 strategy. It has to be &gt; 1.
-Defaults to None.</p></li>
-<li><p><strong>xi_restart</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><em>None.</em>) – mutlitplicative parameter for the update of beta in the greedy
+(Default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>xi_restart</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – mutlitplicative parameter for the update of beta in the greedy
 restarting strategy and for the update of r_lazy in the adaptive
 restarting strategies. It has to be &gt; 1.
-Defaults to None.</p></li>
+(Default is <code class="docutils literal notranslate">None</code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>bool</strong></p>
+<dd class="field-even"><p>True</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>True</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a> – When a parameter that should be set isn’t or doesn’t verify the
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – When a parameter that should be set isn’t or doesn’t verify the
 correct assumptions.</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.FISTA.is_restart">
-<code class="sig-name descname">is_restart</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">z_old</em>, <em class="sig-param">x_new</em>, <em class="sig-param">x_old</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA.is_restart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.FISTA.is_restart" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check whether the algorithm needs to restart</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.FISTA.is_restart">
+<code class="sig-name descname">is_restart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z_old</span></em>, <em class="sig-param"><span class="n">x_new</span></em>, <em class="sig-param"><span class="n">x_old</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA.is_restart"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.FISTA.is_restart" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Check whether the algorithm needs to restart.</p>
 <p>This method implements the checks necessary to tell whether the
 algorithm needs to restart depending on the restarting strategy.
 It also updates the FISTA parameters according to the restarting
@@ -409,446 +408,489 @@ strategy (namely beta and r).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>z_old</strong> (<em>ndarray</em>) – Corresponds to y_n in [L2018].</p></li>
-<li><p><strong>x_new</strong> (<em>ndarray</em>) – Corresponds to x_{n+1} in [L2018].</p></li>
-<li><p><strong>x_old</strong> (<em>ndarray</em>) – Corresponds to x_n in [L2018].</p></li>
+<li><p><strong>z_old</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Corresponds to y_n in <span id="id4">[<a class="reference internal" href="z_ref.html#id9">LLS18</a>]</span>.</p></li>
+<li><p><strong>x_new</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Corresponds to x_{n+1} in <span id="id5">[<a class="reference internal" href="z_ref.html#id9">LLS18</a>]</span>.</p></li>
+<li><p><strong>x_old</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Corresponds to x_n in <span id="id6">[<a class="reference internal" href="z_ref.html#id9">LLS18</a>]</span>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>bool</strong></p>
+<dd class="field-even"><p>Whether the algorithm should restart</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>whether the algorithm should restart</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Implements restarting and safeguarding steps in alg 4-5 o [L2018]</p>
+<p>Implements restarting and safeguarding steps in alg 4-5 o
+<span id="id7">[<a class="reference internal" href="z_ref.html#id9">LLS18</a>]</span></p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.FISTA.update_beta">
-<code class="sig-name descname">update_beta</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">beta</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA.update_beta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.FISTA.update_beta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update beta</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.FISTA.update_beta">
+<code class="sig-name descname">update_beta</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">beta</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA.update_beta"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.FISTA.update_beta" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Update beta.</p>
 <p>This method updates beta only in the case of safeguarding (should only
 be done in the greedy restarting strategy).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>beta</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – The beta parameter</p>
+<dd class="field-odd"><p><strong>beta</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – The beta parameter</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>float</strong></p>
+<dd class="field-even"><p>The new value for the beta parameter</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>the new value for the beta parameter</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.FISTA.update_lambda">
-<code class="sig-name descname">update_lambda</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA.update_lambda"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.FISTA.update_lambda" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update lambda</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.FISTA.update_lambda">
+<code class="sig-name descname">update_lambda</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#FISTA.update_lambda"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.FISTA.update_lambda" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Update lambda.</p>
 <p>This method updates the value of lambda</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>interable</em>) – Positional arguments</p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Keyword arguments</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float current lambda value</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Current lambda value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Implements steps 3 and 4 from algoritm 10.7 in <span id="id1">[B2011]</span></p>
+<p>Implements steps 3 and 4 from algoritm 10.7 in <span id="id8">[<a class="reference internal" href="z_ref.html#id2">BBCL09</a>]</span></p>
 </dd></dl>
-
 </dd></dl>
-
-<dl class="class">
-<dt id="modopt.opt.algorithms.ForwardBackward">
-<em class="property">class </em><code class="sig-prename descclassname">modopt.opt.algorithms.</code><code class="sig-name descname">ForwardBackward</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">grad</em>, <em class="sig-param">prox</em>, <em class="sig-param">cost='auto'</em>, <em class="sig-param">beta_param=1.0</em>, <em class="sig-param">lambda_param=1.0</em>, <em class="sig-param">beta_update=None</em>, <em class="sig-param">lambda_update='fista'</em>, <em class="sig-param">auto_iterate=True</em>, <em class="sig-param">metric_call_period=5</em>, <em class="sig-param">metrics={}</em>, <em class="sig-param">linear=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.ForwardBackward" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-class docutils literal notranslate"><span class="pre">modopt.opt.algorithms.SetUp</span></code></a></p>
-<p>Forward-Backward optimisation</p>
+<dl class="py class code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.ForwardBackward">
+<em class="property">class </em><code class="sig-name descname">ForwardBackward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">grad</span></em>, <em class="sig-param"><span class="n">prox</span></em>, <em class="sig-param"><span class="n">cost</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">beta_param</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">lambda_param</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">beta_update</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lambda_update</span><span class="o">=</span><span class="default_value">'fista'</span></em>, <em class="sig-param"><span class="n">auto_iterate</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">metric_call_period</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">metrics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">linear</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.ForwardBackward" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Bases: <a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-class docutils literal notranslate">modopt.opt.algorithms.SetUp</code></a></p>
+<p>Forward-Backward optimisation.</p>
 <p>This class implements standard forward-backward optimisation with an the
 option to use the FISTA speed-up</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>np.ndarray</em>) – Initial guess for the primal variable</p></li>
+<li><p><strong>x</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Initial guess for the primal variable</p></li>
 <li><p><strong>grad</strong> (<em>class</em>) – Gradient operator class</p></li>
 <li><p><strong>prox</strong> (<em>class</em>) – Proximity operator class</p></li>
-<li><p><strong>cost</strong> (<em>class</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>optional</em>) – Cost function class (default is ‘auto’); Use ‘auto’ to automatically
+<li><p><strong>cost</strong> (<em>class</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Cost function class (default is ‘auto’); Use ‘auto’ to automatically
 generate a costObj instance</p></li>
-<li><p><strong>beta_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Initial value of the beta parameter (default is 1.0)</p></li>
-<li><p><strong>lambda_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Initial value of the lambda parameter (default is 1.0)</p></li>
-<li><p><strong>beta_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Beta parameter update method (default is None)</p></li>
-<li><p><strong>lambda_update</strong> (<em>function</em><em> or </em><em>string</em><em>, </em><em>optional</em>) – Lambda parameter update method (default is ‘fista’)</p></li>
-<li><p><strong>auto_iterate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Option to automatically begin iterations upon initialisation (default
-is ‘True’)</p></li>
+<li><p><strong>beta_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Initial value of the beta parameter (default is <code class="docutils literal notranslate">1.0</code>)</p></li>
+<li><p><strong>lambda_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Initial value of the lambda parameter (default is <code class="docutils literal notranslate">`1.0</code>)</p></li>
+<li><p><strong>beta_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Beta parameter update method (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>lambda_update</strong> (<em>function</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Lambda parameter update method (default is ‘fista’)</p></li>
+<li><p><strong>auto_iterate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to automatically begin iterations upon initialisation (default
+is <code class="docutils literal notranslate">True</code>)</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="modopt.opt.algorithms.ForwardBackward._update_param">
-<code class="sig-name descname">_update_param</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward._update_param"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.ForwardBackward._update_param" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update parameters</p>
+<p class="rubric">Notes</p>
+<p>The <cite>beta_param</cite> can also be set using the keyword <cite>step_size</cite>, which will
+override the value of <cite>beta_param</cite>.</p>
+<div class="admonition seealso" id="modopt-opt-algorithms-note-1">
+<p class="admonition-title">See also<a aria-label="Copy link to this seealso." class="headerlink tooltipped tooltipped-ne" href="#modopt-opt-algorithms-note-1" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="#modopt.opt.algorithms.FISTA" title="modopt.opt.algorithms.FISTA"><code class="xref py py-obj docutils literal notranslate">FISTA</code></a></dt><dd><p>complementary class</p>
+</dd>
+<dt><a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-obj docutils literal notranslate">SetUp</code></a></dt><dd><p>parent class</p>
+</dd>
+</dl>
+</div>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.ForwardBackward._update_param">
+<code class="sig-name descname">_update_param</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward._update_param"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.ForwardBackward._update_param" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Update parameters.</p>
 <p>This method updates the values of the algorthm parameters with the
 methods provided</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.ForwardBackward._update">
-<code class="sig-name descname">_update</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward._update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.ForwardBackward._update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.ForwardBackward._update">
+<code class="sig-name descname">_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward._update"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.ForwardBackward._update" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Update.</p>
 <p>This method updates the current reconstruction</p>
 <p class="rubric">Notes</p>
-<p>Implements algorithm 10.7 (or 10.5) from <span id="id2">[B2011]</span></p>
+<p>Implements algorithm 10.7 (or 10.5) from <span id="id9">[<a class="reference internal" href="z_ref.html#id2">BBCL09</a>]</span></p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.ForwardBackward.iterate">
-<code class="sig-name descname">iterate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">max_iter=150</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward.iterate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.ForwardBackward.iterate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Iterate</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.ForwardBackward.iterate">
+<code class="sig-name descname">iterate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">150</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward.iterate"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.ForwardBackward.iterate" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Iterate.</p>
 <p>This method calls update until either convergence criteria is met or
 the maximum number of iterations is reached</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is <code class="docutils literal notranslate"><span class="pre">150</span></code>)</p>
+<dd class="field-odd"><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is <code class="docutils literal notranslate">150</code>)</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.ForwardBackward.get_notify_observers_kwargs">
-<code class="sig-name descname">get_notify_observers_kwargs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward.get_notify_observers_kwargs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.ForwardBackward.get_notify_observers_kwargs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the mapping between the metrics call and the iterated
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.ForwardBackward.get_notify_observers_kwargs">
+<code class="sig-name descname">get_notify_observers_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward.get_notify_observers_kwargs"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.ForwardBackward.get_notify_observers_kwargs" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Notify observers.</p>
+<p>Return the mapping between the metrics call and the iterated
 variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>notify_observers_kwargs</strong> – the mapping between the iterated variables.</p>
+<dd class="field-odd"><p>The mapping between the iterated variables</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a>,</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.ForwardBackward.retrieve_outputs">
-<code class="sig-name descname">retrieve_outputs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward.retrieve_outputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.ForwardBackward.retrieve_outputs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Declare the outputs of the algorithms as attributes: x_final,
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.ForwardBackward.retrieve_outputs">
+<code class="sig-name descname">retrieve_outputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#ForwardBackward.retrieve_outputs"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.ForwardBackward.retrieve_outputs" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Retireve outputs.</p>
+<p>Declare the outputs of the algorithms as attributes: x_final,
 y_final, metrics.</p>
 </dd></dl>
-
 </dd></dl>
-
-<dl class="class">
-<dt id="modopt.opt.algorithms.GenForwardBackward">
-<em class="property">class </em><code class="sig-prename descclassname">modopt.opt.algorithms.</code><code class="sig-name descname">GenForwardBackward</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">grad</em>, <em class="sig-param">prox_list</em>, <em class="sig-param">cost='auto'</em>, <em class="sig-param">gamma_param=1.0</em>, <em class="sig-param">lambda_param=1.0</em>, <em class="sig-param">gamma_update=None</em>, <em class="sig-param">lambda_update=None</em>, <em class="sig-param">weights=None</em>, <em class="sig-param">auto_iterate=True</em>, <em class="sig-param">metric_call_period=5</em>, <em class="sig-param">metrics={}</em>, <em class="sig-param">linear=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.GenForwardBackward" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-class docutils literal notranslate"><span class="pre">modopt.opt.algorithms.SetUp</span></code></a></p>
-<p>Generalized Forward-Backward Algorithm</p>
-<p>This class implements algorithm 1 from <span id="id3">[R2012]</span></p>
+<dl class="py class code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.GenForwardBackward">
+<em class="property">class </em><code class="sig-name descname">GenForwardBackward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">grad</span></em>, <em class="sig-param"><span class="n">prox_list</span></em>, <em class="sig-param"><span class="n">cost</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">gamma_param</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">lambda_param</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">gamma_update</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lambda_update</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_iterate</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">metric_call_period</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">metrics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">linear</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.GenForwardBackward" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Bases: <a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-class docutils literal notranslate">modopt.opt.algorithms.SetUp</code></a></p>
+<p>Generalized Forward-Backward Algorithm.</p>
+<p>This class implements algorithm 1 from <span id="id10">[<a class="reference internal" href="z_ref.html#id11">RFPeyre11</a>]</span></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a><em> or </em><em>np.ndarray</em>) – Initial guess for the primal variable</p></li>
+<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Initial guess for the primal variable</p></li>
 <li><p><strong>grad</strong> (<em>class instance</em>) – Gradient operator class</p></li>
-<li><p><strong>prox_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – List of proximity operator class instances</p></li>
-<li><p><strong>cost</strong> (<em>class</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>optional</em>) – Cost function class (default is ‘auto’); Use ‘auto’ to automatically
+<li><p><strong>prox_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – List of proximity operator class instances</p></li>
+<li><p><strong>cost</strong> (<em>class</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Cost function class (default is ‘auto’); Use ‘auto’ to automatically
 generate a costObj instance</p></li>
-<li><p><strong>gamma_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Initial value of the gamma parameter (default is 1.0)</p></li>
-<li><p><strong>lambda_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Initial value of the lambda parameter (default is 1.0)</p></li>
-<li><p><strong>gamma_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Gamma parameter update method (default is None)</p></li>
-<li><p><strong>lambda_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Lambda parameter parameter update method (default is None)</p></li>
-<li><p><strong>weights</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a><em> or </em><em>np.ndarray</em><em>, </em><em>optional</em>) – Proximity operator weights (default is None)</p></li>
-<li><p><strong>auto_iterate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Option to automatically begin iterations upon initialisation (default
-is ‘True’)</p></li>
+<li><p><strong>gamma_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Initial value of the gamma parameter (default is <code class="docutils literal notranslate">1.0</code>)</p></li>
+<li><p><strong>lambda_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Initial value of the lambda parameter (default is <code class="docutils literal notranslate">1.0</code>)</p></li>
+<li><p><strong>gamma_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Gamma parameter update method (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>lambda_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Lambda parameter parameter update method (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>weights</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Proximity operator weights (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>auto_iterate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to automatically begin iterations upon initialisation (default
+is <code class="docutils literal notranslate">True</code>)</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="modopt.opt.algorithms.GenForwardBackward._set_weights">
-<code class="sig-name descname">_set_weights</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">weights</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward._set_weights"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.GenForwardBackward._set_weights" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set Weights</p>
+<p class="rubric">Notes</p>
+<p>The <cite>gamma_param</cite> can also be set using the keyword <cite>step_size</cite>, which will
+override the value of <cite>gamma_param</cite>.</p>
+<div class="admonition seealso" id="modopt-opt-algorithms-note-2">
+<p class="admonition-title">See also<a aria-label="Copy link to this seealso." class="headerlink tooltipped tooltipped-ne" href="#modopt-opt-algorithms-note-2" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-obj docutils literal notranslate">SetUp</code></a></dt><dd><p>parent class</p>
+</dd>
+</dl>
+</div>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.GenForwardBackward._set_weights">
+<code class="sig-name descname">_set_weights</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">weights</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward._set_weights"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.GenForwardBackward._set_weights" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Set weights.</p>
 <p>This method sets weights on each of the proximty operators provided</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>weights</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a><em> or </em><em>np.ndarray</em>) – List of weights</p>
+<dd class="field-odd"><p><strong>weights</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – List of weights</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.7)"><strong>TypeError</strong></a> – For invalid input type</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a> – If weights do not sum to one</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.9)"><strong>TypeError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – For invalid input type</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – If weights do not sum to one</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.GenForwardBackward._update_param">
-<code class="sig-name descname">_update_param</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward._update_param"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.GenForwardBackward._update_param" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update parameters</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.GenForwardBackward._update_param">
+<code class="sig-name descname">_update_param</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward._update_param"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.GenForwardBackward._update_param" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Update parameters.</p>
 <p>This method updates the values of the algorthm parameters with the
 methods provided</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.GenForwardBackward._update">
-<code class="sig-name descname">_update</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward._update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.GenForwardBackward._update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.GenForwardBackward._update">
+<code class="sig-name descname">_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward._update"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.GenForwardBackward._update" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Update.</p>
 <p>This method updates the current reconstruction</p>
 <p class="rubric">Notes</p>
-<p>Implements algorithm 1 from <span id="id4">[R2012]</span></p>
+<p>Implements algorithm 1 from <span id="id11">[<a class="reference internal" href="z_ref.html#id11">RFPeyre11</a>]</span></p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.GenForwardBackward.iterate">
-<code class="sig-name descname">iterate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">max_iter=150</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward.iterate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.GenForwardBackward.iterate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Iterate</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.GenForwardBackward.iterate">
+<code class="sig-name descname">iterate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">150</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward.iterate"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.GenForwardBackward.iterate" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Iterate.</p>
 <p>This method calls update until either convergence criteria is met or
-the maximum number of iterations is reached</p>
+the maximum number of iterations is reached.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is <code class="docutils literal notranslate"><span class="pre">150</span></code>)</p>
+<dd class="field-odd"><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is <code class="docutils literal notranslate">150</code>)</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.GenForwardBackward.get_notify_observers_kwargs">
-<code class="sig-name descname">get_notify_observers_kwargs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward.get_notify_observers_kwargs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.GenForwardBackward.get_notify_observers_kwargs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the mapping between the metrics call and the iterated
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.GenForwardBackward.get_notify_observers_kwargs">
+<code class="sig-name descname">get_notify_observers_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward.get_notify_observers_kwargs"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.GenForwardBackward.get_notify_observers_kwargs" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Notify observers.</p>
+<p>Return the mapping between the metrics call and the iterated
 variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>notify_observers_kwargs</strong> – the mapping between the iterated variables.</p>
+<dd class="field-odd"><p>The mapping between the iterated variables</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a>,</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.GenForwardBackward.retrieve_outputs">
-<code class="sig-name descname">retrieve_outputs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward.retrieve_outputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.GenForwardBackward.retrieve_outputs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Declare the outputs of the algorithms as attributes: x_final,
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.GenForwardBackward.retrieve_outputs">
+<code class="sig-name descname">retrieve_outputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#GenForwardBackward.retrieve_outputs"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.GenForwardBackward.retrieve_outputs" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Retrieve outputs.</p>
+<p>Declare the outputs of the algorithms as attributes: x_final,
 y_final, metrics.</p>
 </dd></dl>
-
 </dd></dl>
-
-<dl class="class">
-<dt id="modopt.opt.algorithms.Condat">
-<em class="property">class </em><code class="sig-prename descclassname">modopt.opt.algorithms.</code><code class="sig-name descname">Condat</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">grad</em>, <em class="sig-param">prox</em>, <em class="sig-param">prox_dual</em>, <em class="sig-param">linear=None</em>, <em class="sig-param">cost='auto'</em>, <em class="sig-param">reweight=None</em>, <em class="sig-param">rho=0.5</em>, <em class="sig-param">sigma=1.0</em>, <em class="sig-param">tau=1.0</em>, <em class="sig-param">rho_update=None</em>, <em class="sig-param">sigma_update=None</em>, <em class="sig-param">tau_update=None</em>, <em class="sig-param">auto_iterate=True</em>, <em class="sig-param">max_iter=150</em>, <em class="sig-param">n_rewightings=1</em>, <em class="sig-param">metric_call_period=5</em>, <em class="sig-param">metrics={}</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.Condat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-class docutils literal notranslate"><span class="pre">modopt.opt.algorithms.SetUp</span></code></a></p>
-<p>Condat optimisation</p>
-<p>This class implements algorithm 3.1 from <span id="id5">[Con2013]</span></p>
+<dl class="py class code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.Condat">
+<em class="property">class </em><code class="sig-name descname">Condat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">grad</span></em>, <em class="sig-param"><span class="n">prox</span></em>, <em class="sig-param"><span class="n">prox_dual</span></em>, <em class="sig-param"><span class="n">linear</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cost</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">reweight</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rho</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">tau</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">rho_update</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sigma_update</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tau_update</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_iterate</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">150</span></em>, <em class="sig-param"><span class="n">n_rewightings</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">metric_call_period</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">metrics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.Condat" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Bases: <a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-class docutils literal notranslate">modopt.opt.algorithms.SetUp</code></a></p>
+<p>Condat optimisation.</p>
+<p>This class implements algorithm 3.1 from <span id="id12">[<a class="reference internal" href="z_ref.html#id6">Con13</a>]</span></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>np.ndarray</em>) – Initial guess for the primal variable</p></li>
-<li><p><strong>y</strong> (<em>np.ndarray</em>) – Initial guess for the dual variable</p></li>
+<li><p><strong>x</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Initial guess for the primal variable</p></li>
+<li><p><strong>y</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Initial guess for the dual variable</p></li>
 <li><p><strong>grad</strong> (<em>class instance</em>) – Gradient operator class</p></li>
 <li><p><strong>prox</strong> (<em>class instance</em>) – Proximity primal operator class</p></li>
 <li><p><strong>prox_dual</strong> (<em>class instance</em>) – Proximity dual operator class</p></li>
-<li><p><strong>linear</strong> (<em>class instance</em><em>, </em><em>optional</em>) – Linear operator class (default is None)</p></li>
-<li><p><strong>cost</strong> (<em>class</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>optional</em>) – Cost function class (default is ‘auto’); Use ‘auto’ to automatically
+<li><p><strong>linear</strong> (<em>class instance</em><em>, </em><em>optional</em>) – Linear operator class (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>cost</strong> (<em>class</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Cost function class (default is ‘auto’); Use ‘auto’ to automatically
 generate a costObj instance</p></li>
 <li><p><strong>reweight</strong> (<em>class instance</em><em>, </em><em>optional</em>) – Reweighting class</p></li>
-<li><p><strong>rho</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Relaxation parameter (default is 0.5)</p></li>
-<li><p><strong>sigma</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Proximal dual parameter (default is 1.0)</p></li>
-<li><p><strong>tau</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Proximal primal paramater (default is 1.0)</p></li>
-<li><p><strong>rho_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Relaxation parameter update method (default is None)</p></li>
-<li><p><strong>sigma_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Proximal dual parameter update method (default is None)</p></li>
-<li><p><strong>tau_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Proximal primal parameter update method (default is None)</p></li>
-<li><p><strong>auto_iterate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Option to automatically begin iterations upon initialisation (default
-is ‘True’)</p></li>
-<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is 150)</p></li>
-<li><p><strong>n_rewightings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Number of reweightings to perform (default is 1)</p></li>
+<li><p><strong>rho</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Relaxation parameter (default is <code class="docutils literal notranslate">0.5</code>)</p></li>
+<li><p><strong>sigma</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Proximal dual parameter (default is <code class="docutils literal notranslate">1.0</code>)</p></li>
+<li><p><strong>tau</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Proximal primal paramater (default is <code class="docutils literal notranslate">1.0</code>)</p></li>
+<li><p><strong>rho_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Relaxation parameter update method (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>sigma_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Proximal dual parameter update method (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>tau_update</strong> (<em>function</em><em>, </em><em>optional</em>) – Proximal primal parameter update method (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>auto_iterate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to automatically begin iterations upon initialisation (default
+is <code class="docutils literal notranslate">True</code>)</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is <code class="docutils literal notranslate">150</code>)</p></li>
+<li><p><strong>n_rewightings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Number of reweightings to perform (default is <code class="docutils literal notranslate">1</code>)</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="modopt.opt.algorithms.Condat._update_param">
-<code class="sig-name descname">_update_param</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat._update_param"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.Condat._update_param" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update parameters</p>
+<p class="rubric">Notes</p>
+<p>The <cite>tau_param</cite> can also be set using the keyword <cite>step_size</cite>, which will
+override the value of <cite>tau_param</cite>.</p>
+<div class="admonition seealso" id="modopt-opt-algorithms-note-3">
+<p class="admonition-title">See also<a aria-label="Copy link to this seealso." class="headerlink tooltipped tooltipped-ne" href="#modopt-opt-algorithms-note-3" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-obj docutils literal notranslate">SetUp</code></a></dt><dd><p>parent class</p>
+</dd>
+</dl>
+</div>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.Condat._update_param">
+<code class="sig-name descname">_update_param</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat._update_param"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.Condat._update_param" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Update parameters.</p>
 <p>This method updates the values of the algorthm parameters with the
 methods provided</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.Condat._update">
-<code class="sig-name descname">_update</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat._update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.Condat._update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.Condat._update">
+<code class="sig-name descname">_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat._update"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.Condat._update" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Update.</p>
 <p>This method updates the current reconstruction</p>
 <p class="rubric">Notes</p>
-<p>Implements equation 9 (algorithm 3.1) from <span id="id6">[Con2013]</span></p>
+<p>Implements equation 9 (algorithm 3.1) from <span id="id13">[<a class="reference internal" href="z_ref.html#id6">Con13</a>]</span></p>
 <ul class="simple">
 <li><p>primal proximity operator set up for positivity constraint</p></li>
 </ul>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.Condat.iterate">
-<code class="sig-name descname">iterate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">max_iter=150</em>, <em class="sig-param">n_rewightings=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat.iterate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.Condat.iterate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Iterate</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.Condat.iterate">
+<code class="sig-name descname">iterate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">150</span></em>, <em class="sig-param"><span class="n">n_rewightings</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat.iterate"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.Condat.iterate" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Iterate.</p>
 <p>This method calls update until either convergence criteria is met or
 the maximum number of iterations is reached</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is 150)</p></li>
-<li><p><strong>n_rewightings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Number of reweightings to perform (default is 1)</p></li>
+<li><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is <code class="docutils literal notranslate">150</code>)</p></li>
+<li><p><strong>n_rewightings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Number of reweightings to perform (default is <code class="docutils literal notranslate">1</code>)</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.Condat.get_notify_observers_kwargs">
-<code class="sig-name descname">get_notify_observers_kwargs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat.get_notify_observers_kwargs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.Condat.get_notify_observers_kwargs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the mapping between the metrics call and the iterated
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.Condat.get_notify_observers_kwargs">
+<code class="sig-name descname">get_notify_observers_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat.get_notify_observers_kwargs"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.Condat.get_notify_observers_kwargs" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Notify observers.</p>
+<p>Return the mapping between the metrics call and the iterated
 variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>notify_observers_kwargs</strong> – the mapping between the iterated variables.</p>
+<dd class="field-odd"><p><strong>notify_observers_kwargs</strong> – The mapping between the iterated variables</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a>,</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>,</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.Condat.retrieve_outputs">
-<code class="sig-name descname">retrieve_outputs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat.retrieve_outputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.Condat.retrieve_outputs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Declare the outputs of the algorithms as attributes: x_final,
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.Condat.retrieve_outputs">
+<code class="sig-name descname">retrieve_outputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#Condat.retrieve_outputs"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.Condat.retrieve_outputs" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Retrieve outputs.</p>
+<p>Declare the outputs of the algorithms as attributes: x_final,
 y_final, metrics.</p>
 </dd></dl>
-
 </dd></dl>
-
-<dl class="class">
-<dt id="modopt.opt.algorithms.POGM">
-<em class="property">class </em><code class="sig-prename descclassname">modopt.opt.algorithms.</code><code class="sig-name descname">POGM</code><span class="sig-paren">(</span><em class="sig-param">u</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">z</em>, <em class="sig-param">grad</em>, <em class="sig-param">prox</em>, <em class="sig-param">cost='auto'</em>, <em class="sig-param">linear=None</em>, <em class="sig-param">beta_param=1.0</em>, <em class="sig-param">sigma_bar=1.0</em>, <em class="sig-param">auto_iterate=True</em>, <em class="sig-param">metric_call_period=5</em>, <em class="sig-param">metrics={}</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.POGM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-class docutils literal notranslate"><span class="pre">modopt.opt.algorithms.SetUp</span></code></a></p>
-<p>Proximal Optimised Gradient Method</p>
-<p>This class implements algorithm 3 from <span id="id7">[K2018]</span></p>
+<dl class="py class code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.POGM">
+<em class="property">class </em><code class="sig-name descname">POGM</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">grad</span></em>, <em class="sig-param"><span class="n">prox</span></em>, <em class="sig-param"><span class="n">cost</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">linear</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">beta_param</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">sigma_bar</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">auto_iterate</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">metric_call_period</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">metrics</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.POGM" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Bases: <a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-class docutils literal notranslate">modopt.opt.algorithms.SetUp</code></a></p>
+<p>Proximal Optimised Gradient Method.</p>
+<p>This class implements algorithm 3 from <span id="id14">[<a class="reference internal" href="z_ref.html#id8">KF17</a>]</span></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>u</strong> (<em>np.ndarray</em>) – Initial guess for the u variable</p></li>
-<li><p><strong>x</strong> (<em>np.ndarray</em>) – Initial guess for the x variable (primal)</p></li>
-<li><p><strong>y</strong> (<em>np.ndarray</em>) – Initial guess for the y variable</p></li>
-<li><p><strong>z</strong> (<em>np.ndarray</em>) – Initial guess for the z variable</p></li>
+<li><p><strong>u</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Initial guess for the u variable</p></li>
+<li><p><strong>x</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Initial guess for the x variable (primal)</p></li>
+<li><p><strong>y</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Initial guess for the y variable</p></li>
+<li><p><strong>z</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Initial guess for the z variable</p></li>
 <li><p><strong>grad</strong> (<em>class</em>) – Gradient operator class</p></li>
 <li><p><strong>prox</strong> (<em>class</em>) – Proximity operator class</p></li>
-<li><p><strong>cost</strong> (<em>class</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>optional</em>) – Cost function class (default is ‘auto’); Use ‘auto’ to automatically
+<li><p><strong>cost</strong> (<em>class</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Cost function class (default is ‘auto’); Use ‘auto’ to automatically
 generate a costObj instance</p></li>
-<li><p><strong>linear</strong> (<em>class instance</em><em>, </em><em>optional</em>) – Linear operator class (default is None)</p></li>
-<li><p><strong>beta_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Initial value of the beta parameter (default is 1.0). This corresponds
-to (1 / L) in <span id="id8">[K2018]</span></p></li>
-<li><p><strong>sigma_bar</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Value of the shrinking parameter sigma bar (default is 1.0)</p></li>
-<li><p><strong>auto_iterate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Option to automatically begin iterations upon initialisation (default
-is ‘True’)</p></li>
+<li><p><strong>linear</strong> (<em>class instance</em><em>, </em><em>optional</em>) – Linear operator class (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>beta_param</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Initial value of the beta parameter (default is <code class="docutils literal notranslate">1.0</code>).
+This corresponds to (1 / L) in <span id="id15">[<a class="reference internal" href="z_ref.html#id8">KF17</a>]</span></p></li>
+<li><p><strong>sigma_bar</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Value of the shrinking parameter sigma bar (default is <code class="docutils literal notranslate">1.0</code>)</p></li>
+<li><p><strong>auto_iterate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to automatically begin iterations upon initialisation (default
+is <code class="docutils literal notranslate">True</code>)</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="modopt.opt.algorithms.POGM._update">
-<code class="sig-name descname">_update</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM._update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.POGM._update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update</p>
+<p class="rubric">Notes</p>
+<p>The <cite>beta_param</cite> can also be set using the keyword <cite>step_size</cite>, which will
+override the value of <cite>beta_param</cite>.</p>
+<div class="admonition seealso" id="modopt-opt-algorithms-note-4">
+<p class="admonition-title">See also<a aria-label="Copy link to this seealso." class="headerlink tooltipped tooltipped-ne" href="#modopt-opt-algorithms-note-4" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="#modopt.opt.algorithms.SetUp" title="modopt.opt.algorithms.SetUp"><code class="xref py py-obj docutils literal notranslate">SetUp</code></a></dt><dd><p>parent class</p>
+</dd>
+</dl>
+</div>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.POGM._update">
+<code class="sig-name descname">_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM._update"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.POGM._update" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Update.</p>
 <p>This method updates the current reconstruction</p>
 <p class="rubric">Notes</p>
-<p>Implements algorithm 3 from <span id="id9">[K2018]</span></p>
+<p>Implements algorithm 3 from <span id="id16">[<a class="reference internal" href="z_ref.html#id8">KF17</a>]</span></p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.POGM.iterate">
-<code class="sig-name descname">iterate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">max_iter=150</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM.iterate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.POGM.iterate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Iterate</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.POGM.iterate">
+<code class="sig-name descname">iterate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">150</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM.iterate"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.POGM.iterate" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Iterate.</p>
 <p>This method calls update until either convergence criteria is met or
-the maximum number of iterations is reached</p>
+the maximum number of iterations is reached.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is <code class="docutils literal notranslate"><span class="pre">150</span></code>)</p>
+<dd class="field-odd"><p><strong>max_iter</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Maximum number of iterations (default is <code class="docutils literal notranslate">150</code>)</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.POGM.get_notify_observers_kwargs">
-<code class="sig-name descname">get_notify_observers_kwargs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM.get_notify_observers_kwargs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.POGM.get_notify_observers_kwargs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the mapping between the metrics call and the iterated
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.POGM.get_notify_observers_kwargs">
+<code class="sig-name descname">get_notify_observers_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM.get_notify_observers_kwargs"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.POGM.get_notify_observers_kwargs" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Notify observers.</p>
+<p>Return the mapping between the metrics call and the iterated
 variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>notify_observers_kwargs</strong> – the mapping between the iterated variables.</p>
+<dd class="field-odd"><p>The mapping between the iterated variables</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a>,</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.algorithms.POGM.retrieve_outputs">
-<code class="sig-name descname">retrieve_outputs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM.retrieve_outputs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.algorithms.POGM.retrieve_outputs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Declare the outputs of the algorithms as attributes: x_final,
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.algorithms.POGM.retrieve_outputs">
+<code class="sig-name descname">retrieve_outputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/algorithms.html#POGM.retrieve_outputs"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.algorithms.POGM.retrieve_outputs" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Retrieve outputs.</p>
+<p>Declare the outputs of the algorithms as attributes: x_final,
 y_final, metrics.</p>
 </dd></dl>
-
 </dd></dl>
-
+</section>
+</main>
+<footer class="mt-20 px-5 md:ml-fluid mb-4 flex-shrink-0 text-sm text-gray-700" role="contentinfo">© Copyright 2020, Samuel Farrens Last updated: 09 Apr, 2021. Made with <a href="https://www.sphinx-doc.org">Sphinx 3.5.2</a></footer>
 </div>
-
-
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="modopt.opt.cost.html" class="btn btn-neutral float-right" title="2.1.4.1.2. modopt.opt.cost module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="modopt.opt.html" class="btn btn-neutral float-left" title="2.1.4. modopt.opt package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2017, Samuel Farrens
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-  
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
-    
-   
-
+<div class="sticky bottom-0 md:hidden print:hidden bg-white">
+<div class="flex justify-center items-center">
+<button aria-labelledby="menuLabel" class="text-3xl p-4 flex items-center focus:bg-gray-200" id="openNavBtn">
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+<span class="pl-2 text-sm font-medium uppercase tracking-wide text-gray-700" id="menuLabel">Menu</span>
+</button><button aria-labelledby="searchLabel" class="text-3xl p-4 flex items-center focus:bg-gray-200" id="openSearchBtn">
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+<span class="pl-2 text-sm font-medium uppercase tracking-wide text-gray-700" id="searchLabel">Search</span>
+</button>
+</div>
+</div>
+<div class="w-full fixed bottom-0 left-0 z-10 bg-gray-900 overflow-x-hidden pt-10 flex flex-col items-center md:hidden" data-menu="closed" id="search-pane">
+<h4 class="text-xl text-white mb-4" id="search-label">Enter search term</h4><form action="search.html" class="flex w-full justify-between items-center max-w-sm px-12" id="searchbox" method="get">
+<input aria-labelledby="search-label" class="p-2 flex-1" name="q" placeholder="Search the docs" type="search"/>
+<button aria-label="Get search results" class="p-2 text-white bg-gray-700 hover:bg-gray-200 hover:text-pink-500 focus:bg-gray-200 focus:text-pink-500 tooltipped tooltipped-sw">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+</form>
+<button aria-label="Close menu" class="text-4xl text-gray-200 p-4 bottom-0 hover:text-pink-500 md:hidden focus:text-pink-500 self-center" id="closeSearchBtn" title="Close menu">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</div>
+<div class="fixed bottom-0 right-0 opacity-0 p-4 m-4 bg-gray-900 text-gray-100 transition transform duration-500 translate-y-full" id="snackbar"></div>
+<div class="fixed inset-0 bg-black bg-opacity-50" id="screen" style="display: none;"></div>
+</div>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
+</script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/doctools.js"></script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+<script defer="" src="_static/theme.js"></script>
 </body>
 </html>

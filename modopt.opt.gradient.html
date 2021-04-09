@@ -1,286 +1,215 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>2.1.4.1.3. modopt.opt.gradient module &mdash; modopt 1.0 documentation</title>
-  
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.1.4.1.4. modopt.opt.linear module" href="modopt.opt.linear.html" />
-    <link rel="prev" title="2.1.4.1.2. modopt.opt.cost module" href="modopt.opt.cost.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="index.html" class="icon icon-home"> modopt
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                1.0
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="Docutils 0.17: http://docutils.sourceforge.net/" name="generator"/>
+<title>
+      modopt.opt.gradient | modopt v1.5.0
+    </title>
+<link href="_static/pygments.css" rel="stylesheet"/>
+<link href="_static/theme.css" rel="stylesheet"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="modopt.opt.linear.html" rel="next" title="modopt.opt.linear"/>
+<link href="modopt.opt.cost.html" rel="prev" title="modopt.opt.cost"/>
+</head><body class="text-gray-900 antialiased min-h-screen md:h-screen flex flex-col">
+<a class="block text-xl bg-white px-8 py-4 z-20 absolute top-0 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#modopt-opt-gradient" title="Skip navigation links">Skip to content</a>
+<header class="md:sticky top-0 bg-gray-900 shadow-md flex md:flex-row justify-between items-center z-10"><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 tooltipped tooltipped-se" href="index.html">
+<h2 class="text-xl text-gray-100 mx-5 py-4">modopt v1.5.0</h2>
+</a><form action="search.html" class="hidden md:flex my-auto mx-5 justify-between items-center print:hidden" id="searchbox" method="get">
+<input aria-label="Search the docs" class="p-2 flex-1 focus:bg-yellow-100" id="search-input" name="q" placeholder="Search the docs" style="width: 300px;" type="search"/>
+<button aria-label="Get search results" class="p-2 text-white bg-gray-700 hover:bg-gray-200 hover:text-pink-500 focus:bg-gray-200 focus:text-pink-500 tooltipped tooltipped-sw">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+</form>
+</header>
+<div class="md:overflow-hidden flex flex-col md:flex-row flex-1"><nav class="h-full fixed md:relative inset-y-0 left-0 z-20 md:z-0 bg-white text-gray-700 border-r overflow-x-hidden pt-16 print:hidden flex flex-col" data-menu="closed" role="navigation" style="width: 270px;">
+<div class="nav-toc"><p class="caption">Getting Started</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="about.html">About</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="installation.html">Installation</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="dependencies.html">Dependencies</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="quickstart.html">Quickstart Tutorial</a></div></li>
+</ul>
+<p class="caption">API Documentation</p>
+<ul class="current">
+<li class="toctree-l1 current expanded"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.html">modopt</a></div><ul class="current">
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.base.html">modopt.base</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.backend.html">modopt.base.backend</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.np_adjust.html">modopt.base.np_adjust</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.observable.html">modopt.base.observable</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.transform.html">modopt.base.transform</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.types.html">modopt.base.types</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.wrappers.html">modopt.base.wrappers</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.interface.html">modopt.interface</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.interface.errors.html">modopt.interface.errors</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.interface.log.html">modopt.interface.log</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.math.html">modopt.math</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.convolve.html">modopt.math.convolve</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.matrix.html">modopt.math.matrix</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.metrics.html">modopt.math.metrics</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.stats.html">modopt.math.stats</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2 current expanded"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.opt.html">modopt.opt</a></div><ul class="current">
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.algorithms.html">modopt.opt.algorithms</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.cost.html">modopt.opt.cost</a></div></li>
+<li class="toctree-l3 current expanded"><div class="nav-link"><a class="current reference internal" href="#">modopt.opt.gradient</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.linear.html">modopt.opt.linear</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.proximity.html">modopt.opt.proximity</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.reweight.html">modopt.opt.reweight</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.plot.html">modopt.plot</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.plot.cost_plot.html">modopt.plot.cost_plot</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.signal.html">modopt.signal</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.filter.html">modopt.signal.filter</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.noise.html">modopt.signal.noise</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.positivity.html">modopt.signal.positivity</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.svd.html">modopt.signal.svd</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.validation.html">modopt.signal.validation</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.wavelet.html">modopt.signal.wavelet</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="z_ref.html">References</a></div></li>
+</ul>
+<p class="caption">Examples</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="plugin_example.html">Plugin Example</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="notebooks.html">Notebooks</a></div><ul class="simple">
+</ul>
+</li>
+</ul>
+<p class="caption">Guidelines</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="contributing.html">Contributing</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="citing.html">Citing this Package</a></div></li>
+</ul>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="examples.html">1. ModOpt Examples</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modopt.html">2. modopt package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="modopt.html#subpackages">2.1. Subpackages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="modopt.base.html">2.1.1. modopt.base package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.interface.html">2.1.2. modopt.interface package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.math.html">2.1.3. modopt.math package</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="modopt.opt.html">2.1.4. modopt.opt package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.plot.html">2.1.5. modopt.plot package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.signal.html">2.1.6. modopt.signal package</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="modopt.html#submodules">2.2. Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="modopt.info.html">2.2.1. modopt.info module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="modopt.html#module-modopt">2.3. Module contents</a></li>
-</ul>
-</li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">modopt</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="modopt.html">2. modopt package</a> &raquo;</li>
-        
-          <li><a href="modopt.opt.html">2.1.4. modopt.opt package</a> &raquo;</li>
-        
-      <li>2.1.4.1.3. modopt.opt.gradient module</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/modopt.opt.gradient.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="module-modopt.opt.gradient">
-<span id="modopt-opt-gradient-module"></span><h1>2.1.4.1.3. modopt.opt.gradient module<a class="headerlink" href="#module-modopt.opt.gradient" title="Permalink to this headline">¶</a></h1>
-<p>GRADIENT CLASSES</p>
+<button aria-label="Close menu" class="text-4xl text-gray-800 p-4 bottom-0 hover:text-pink-500 md:hidden focus:text-pink-500 self-center" id="closeNavBtn" title="Close menu">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="overflow-y-auto md:w-full flex flex-col flex-1" id="main-wrapper">
+<main class="px-5 md:ml-fluid flex-1" role="main">
+<section id="module-modopt.opt.gradient">
+<span id="modopt-opt-gradient"></span><h1>modopt.opt.gradient<a aria-label="Copy link to section: modopt.opt.gradient." class="headerlink tooltipped tooltipped-ne" href="#module-modopt.opt.gradient" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h1>
+<p>GRADIENT CLASSES.</p>
 <p>This module contains classses for defining algorithm gradients.
 Based on work by Yinghao Ge and Fred Ngole.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
-<dd class="field-odd"><p>Samuel Farrens &lt;<a class="reference external" href="mailto:samuel&#46;farrens&#37;&#52;&#48;cea&#46;fr">samuel<span>&#46;</span>farrens<span>&#64;</span>cea<span>&#46;</span>fr</a>&gt;</p>
+<dd class="field-odd"><p>Samuel Farrens &lt;<a class="reference external" href="mailto:samuel.farrens%40cea.fr">samuel<span>.</span>farrens<span>@</span>cea<span>.</span>fr<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>&gt;</p>
 </dd>
 </dl>
-<dl class="class">
-<dt id="modopt.opt.gradient.GradParent">
-<em class="property">class </em><code class="sig-prename descclassname">modopt.opt.gradient.</code><code class="sig-name descname">GradParent</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">op</em>, <em class="sig-param">trans_op</em>, <em class="sig-param">get_grad=None</em>, <em class="sig-param">cost=None</em>, <em class="sig-param">data_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradParent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.gradient.GradParent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Gradient Parent Class</p>
+<dl class="py class code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradParent">
+<em class="property">class </em><code class="sig-name descname">GradParent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em>, <em class="sig-param"><span class="n">op</span></em>, <em class="sig-param"><span class="n">trans_op</span></em>, <em class="sig-param"><span class="n">get_grad</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradParent"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradParent" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate">object</code><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
+<p>Gradient Parent Class.</p>
 <p>This class defines the basic methods that will be inherited by specific
 gradient classes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>np.ndarray</em>) – The observed data</p></li>
+<li><p><strong>input_data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – The observed data</p></li>
 <li><p><strong>op</strong> (<em>function</em>) – The operator</p></li>
 <li><p><strong>trans_op</strong> (<em>function</em>) – The transpose operator</p></li>
-<li><p><strong>get_grad</strong> (<em>function</em><em>, </em><em>optional</em>) – Method for calculating the gradient (default is None)</p></li>
-<li><p><strong>cost</strong> (<em>function</em><em>, </em><em>optional</em>) – Method for calculating the cost (default is None)</p></li>
-<li><p><strong>data_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.7)"><em>type</em></a><em>, </em><em>optional</em>) – Expected data type of the input data (default is None)</p></li>
+<li><p><strong>get_grad</strong> (<em>function</em><em>, </em><em>optional</em>) – Method for calculating the gradient (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>cost</strong> (<em>function</em><em>, </em><em>optional</em>) – Method for calculating the cost (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>data_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.9)"><em>type</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Expected data type of the input data (default is <code class="docutils literal notranslate">None</code>)</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option for verbose output (default is <code class="docutils literal notranslate">True</code>)</p></li>
 </ul>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.opt.gradient</span> <span class="k">import</span> <span class="n">GradParent</span>
+<div class="doctest highlight">
+<div class="code-header">
+<span class="code-lang">python</span>
+<button aria-label="Copy this code" class="copy tooltipped tooltipped-nw"><svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/xvg"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button>
+</div>
+<pre><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.opt.gradient</span> <span class="kn">import</span> <span class="n">GradParent</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">GradParent</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">op</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">array([[  0.,   1.,   4.],</span>
-<span class="go">       [  9.,  16.,  25.],</span>
-<span class="go">       [ 36.,  49.,  64.]])</span>
+<span class="go">array([[ 0.,  1.,  4.],</span>
+<span class="go">       [ 9., 16., 25.],</span>
+<span class="go">       [36., 49., 64.]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">trans_op</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">array([[   0.,    1.,    8.],</span>
-<span class="go">       [  27.,   64.,  125.],</span>
-<span class="go">       [ 216.,  343.,  512.]])</span>
+<span class="go">array([[  0.,   1.,   8.],</span>
+<span class="go">       [ 27.,  64., 125.],</span>
+<span class="go">       [216., 343., 512.]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">trans_op_op</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">array([[  0.00000000e+00,   1.00000000e+00,   6.40000000e+01],</span>
-<span class="go">       [  7.29000000e+02,   4.09600000e+03,   1.56250000e+04],</span>
-<span class="go">       [  4.66560000e+04,   1.17649000e+05,   2.62144000e+05]])</span>
-</pre></div>
-</div>
-<dl class="method">
-<dt id="modopt.opt.gradient.GradParent.obs_data">
-<em class="property">property </em><code class="sig-name descname">obs_data</code><a class="headerlink" href="#modopt.opt.gradient.GradParent.obs_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Observed Data</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.7)"><strong>TypeError</strong></a> – For invalid input type</p>
-</dd>
-</dl>
+<span class="go">array([[0.00000e+00, 1.00000e+00, 6.40000e+01],</span>
+<span class="go">       [7.29000e+02, 4.09600e+03, 1.56250e+04],</span>
+<span class="go">       [4.66560e+04, 1.17649e+05, 2.62144e+05]])</span>
+</code></pre></div>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradParent.obs_data">
+<em class="property">property </em><code class="sig-name descname">obs_data</code><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradParent.obs_data" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Observed Data.</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.gradient.GradParent.op">
-<em class="property">property </em><code class="sig-name descname">op</code><a class="headerlink" href="#modopt.opt.gradient.GradParent.op" title="Permalink to this definition">¶</a></dt>
-<dd><p>Operator</p>
-<p>This method defines the operator</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradParent.op">
+<em class="property">property </em><code class="sig-name descname">op</code><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradParent.op" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Operator.</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.gradient.GradParent.trans_op">
-<em class="property">property </em><code class="sig-name descname">trans_op</code><a class="headerlink" href="#modopt.opt.gradient.GradParent.trans_op" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transpose Operator</p>
-<p>This method defines the transpose operator</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradParent.trans_op">
+<em class="property">property </em><code class="sig-name descname">trans_op</code><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradParent.trans_op" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Transpose operator.</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.gradient.GradParent.get_grad">
-<em class="property">property </em><code class="sig-name descname">get_grad</code><a class="headerlink" href="#modopt.opt.gradient.GradParent.get_grad" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get Gradient</p>
-<p>This method defines the calculation of the gradient</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradParent.get_grad">
+<em class="property">property </em><code class="sig-name descname">get_grad</code><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradParent.get_grad" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Get gradient value.</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.gradient.GradParent.grad">
-<em class="property">property </em><code class="sig-name descname">grad</code><a class="headerlink" href="#modopt.opt.gradient.GradParent.grad" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gradient</p>
-<p>The gradient value</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradParent.grad">
+<em class="property">property </em><code class="sig-name descname">grad</code><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradParent.grad" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Gradient value.</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.gradient.GradParent.cost">
-<em class="property">property </em><code class="sig-name descname">cost</code><a class="headerlink" href="#modopt.opt.gradient.GradParent.cost" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cost Contribution</p>
-<p>This method defines the proximity operator’s contribution to the total
-cost</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradParent.cost">
+<em class="property">property </em><code class="sig-name descname">cost</code><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradParent.cost" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Cost contribution.</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.gradient.GradParent.trans_op_op">
-<code class="sig-name descname">trans_op_op</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradParent.trans_op_op"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.gradient.GradParent.trans_op_op" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transpose Operation of the Operator</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradParent.trans_op_op">
+<code class="sig-name descname">trans_op_op</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradParent.trans_op_op"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradParent.trans_op_op" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Transpose Operation of the Operator.</p>
 <p>This method calculates the action of the transpose operator on
 the action of the operator on the data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>np.ndarray</em>) – Input data array</p>
+<dd class="field-odd"><p><strong>input_data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Input data array</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>Result</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.ndarray result</p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)">numpy.ndarray<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -288,35 +217,55 @@ the action of the operator on the data</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{H}^T(\mathbf{H}\mathbf{x})\]</div>
 </dd></dl>
-
 </dd></dl>
-
-<dl class="class">
-<dt id="modopt.opt.gradient.GradBasic">
-<em class="property">class </em><code class="sig-prename descclassname">modopt.opt.gradient.</code><code class="sig-name descname">GradBasic</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradBasic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.gradient.GradBasic" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#modopt.opt.gradient.GradParent" title="modopt.opt.gradient.GradParent"><code class="xref py py-class docutils literal notranslate"><span class="pre">modopt.opt.gradient.GradParent</span></code></a></p>
-<p>Basic Gradient Class</p>
+<dl class="py class code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradBasic">
+<em class="property">class </em><code class="sig-name descname">GradBasic</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradBasic"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradBasic" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Bases: <a class="reference internal" href="#modopt.opt.gradient.GradParent" title="modopt.opt.gradient.GradParent"><code class="xref py py-class docutils literal notranslate">modopt.opt.gradient.GradParent</code></a></p>
+<p>Basic Gradient Class.</p>
 <p>This class defines the gradient calculation and costs methods for
-common inverse problems</p>
+common inverse problems.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>interable</em>) – Positional arguments</p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Keyword arguments</p></li>
+</ul>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.opt.gradient</span> <span class="k">import</span> <span class="n">GradBasic</span>
+<div class="doctest highlight">
+<div class="code-header">
+<span class="code-lang">python</span>
+<button aria-label="Copy this code" class="copy tooltipped tooltipped-nw"><svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/xvg"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button>
+</div>
+<pre><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.opt.gradient</span> <span class="kn">import</span> <span class="n">GradBasic</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">GradBasic</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">get_grad</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">grad</span>
-<span class="go">array([[  0.00000000e+00,   0.00000000e+00,   8.00000000e+00],</span>
-<span class="go">       [  2.16000000e+02,   1.72800000e+03,   8.00000000e+03],</span>
-<span class="go">       [  2.70000000e+04,   7.40880000e+04,   1.75616000e+05]])</span>
-</pre></div>
+<span class="go">array([[0.00000e+00, 0.00000e+00, 8.00000e+00],</span>
+<span class="go">       [2.16000e+02, 1.72800e+03, 8.00000e+03],</span>
+<span class="go">       [2.70000e+04, 7.40880e+04, 1.75616e+05]])</span>
+</code></pre></div>
+<div class="admonition seealso" id="modopt-opt-gradient-note-1">
+<p class="admonition-title">See also<a aria-label="Copy link to this seealso." class="headerlink tooltipped tooltipped-ne" href="#modopt-opt-gradient-note-1" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="#modopt.opt.gradient.GradParent" title="modopt.opt.gradient.GradParent"><code class="xref py py-obj docutils literal notranslate">GradParent</code></a></dt><dd><p>parent class</p>
+</dd>
+</dl>
 </div>
-<dl class="method">
-<dt id="modopt.opt.gradient.GradBasic._get_grad_method">
-<code class="sig-name descname">_get_grad_method</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradBasic._get_grad_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.gradient.GradBasic._get_grad_method" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the gradient</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradBasic._get_grad_method">
+<code class="sig-name descname">_get_grad_method</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradBasic._get_grad_method"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradBasic._get_grad_method" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Get the gradient.</p>
 <p>This method calculates the gradient step from the input data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>np.ndarray</em>) – Input data array</p>
+<dd class="field-odd"><p><strong>input_data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Input data array</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -324,74 +273,66 @@ common inverse problems</p>
 <div class="math notranslate nohighlight">
 \[\nabla F(x) = \mathbf{H}^T(\mathbf{H}\mathbf{x} - \mathbf{y})\]</div>
 </dd></dl>
-
-<dl class="method">
-<dt id="modopt.opt.gradient.GradBasic._cost_method">
-<code class="sig-name descname">_cost_method</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradBasic._cost_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.opt.gradient.GradBasic._cost_method" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate gradient component of the cost</p>
+<dl class="py method code-definition">
+<dt class="accordion" id="modopt.opt.gradient.GradBasic._cost_method">
+<code class="sig-name descname">_cost_method</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/opt/gradient.html#GradBasic._cost_method"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.opt.gradient.GradBasic._cost_method" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Calculate gradient component of the cost.</p>
 <p>This method returns the l2 norm error of the difference between the
 original data and the data obtained after optimisation</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>interable</em>) – Positional arguments</p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Keyword arguments</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float gradient cost component</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Gradient cost component</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 </dd></dl>
-
 </dd></dl>
-
+</section>
+</main>
+<footer class="mt-20 px-5 md:ml-fluid mb-4 flex-shrink-0 text-sm text-gray-700" role="contentinfo">© Copyright 2020, Samuel Farrens Last updated: 09 Apr, 2021. Made with <a href="https://www.sphinx-doc.org">Sphinx 3.5.2</a></footer>
 </div>
-
-
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="modopt.opt.linear.html" class="btn btn-neutral float-right" title="2.1.4.1.4. modopt.opt.linear module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="modopt.opt.cost.html" class="btn btn-neutral float-left" title="2.1.4.1.2. modopt.opt.cost module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2017, Samuel Farrens
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-  
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
-    
-   
-
+<div class="sticky bottom-0 md:hidden print:hidden bg-white">
+<div class="flex justify-center items-center">
+<button aria-labelledby="menuLabel" class="text-3xl p-4 flex items-center focus:bg-gray-200" id="openNavBtn">
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+<span class="pl-2 text-sm font-medium uppercase tracking-wide text-gray-700" id="menuLabel">Menu</span>
+</button><button aria-labelledby="searchLabel" class="text-3xl p-4 flex items-center focus:bg-gray-200" id="openSearchBtn">
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+<span class="pl-2 text-sm font-medium uppercase tracking-wide text-gray-700" id="searchLabel">Search</span>
+</button>
+</div>
+</div>
+<div class="w-full fixed bottom-0 left-0 z-10 bg-gray-900 overflow-x-hidden pt-10 flex flex-col items-center md:hidden" data-menu="closed" id="search-pane">
+<h4 class="text-xl text-white mb-4" id="search-label">Enter search term</h4><form action="search.html" class="flex w-full justify-between items-center max-w-sm px-12" id="searchbox" method="get">
+<input aria-labelledby="search-label" class="p-2 flex-1" name="q" placeholder="Search the docs" type="search"/>
+<button aria-label="Get search results" class="p-2 text-white bg-gray-700 hover:bg-gray-200 hover:text-pink-500 focus:bg-gray-200 focus:text-pink-500 tooltipped tooltipped-sw">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+</form>
+<button aria-label="Close menu" class="text-4xl text-gray-200 p-4 bottom-0 hover:text-pink-500 md:hidden focus:text-pink-500 self-center" id="closeSearchBtn" title="Close menu">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</div>
+<div class="fixed bottom-0 right-0 opacity-0 p-4 m-4 bg-gray-900 text-gray-100 transition transform duration-500 translate-y-full" id="snackbar"></div>
+<div class="fixed inset-0 bg-black bg-opacity-50" id="screen" style="display: none;"></div>
+</div>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
+</script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/doctools.js"></script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+<script defer="" src="_static/theme.js"></script>
 </body>
 </html>

@@ -1,194 +1,129 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>modopt.math.stats &mdash; modopt 1.0 documentation</title>
-  
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="../../../index.html" class="icon icon-home"> modopt
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                1.0
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<title>
+      modopt.math.stats | modopt v1.5.0
+    </title>
+<link href="../../../_static/pygments.css" rel="stylesheet"/>
+<link href="../../../_static/theme.css" rel="stylesheet"/>
+<link href="../../../search.html" rel="search" title="Search"/>
+<link href="../../../genindex.html" rel="index" title="Index"/>
+</head><body class="text-gray-900 antialiased min-h-screen md:h-screen flex flex-col">
+<a class="block text-xl bg-white px-8 py-4 z-20 absolute top-0 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#modopt-math-stats" title="Skip navigation links">Skip to content</a>
+<header class="md:sticky top-0 bg-gray-900 shadow-md flex md:flex-row justify-between items-center z-10"><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 tooltipped tooltipped-se" href="../../../index.html">
+<h2 class="text-xl text-gray-100 mx-5 py-4">modopt v1.5.0</h2>
+</a><form action="../../../search.html" class="hidden md:flex my-auto mx-5 justify-between items-center print:hidden" id="searchbox" method="get">
+<input aria-label="Search the docs" class="p-2 flex-1 focus:bg-yellow-100" id="search-input" name="q" placeholder="Search the docs" style="width: 300px;" type="search"/>
+<button aria-label="Get search results" class="p-2 text-white bg-gray-700 hover:bg-gray-200 hover:text-pink-500 focus:bg-gray-200 focus:text-pink-500 tooltipped tooltipped-sw">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+</form>
+</header>
+<div class="md:overflow-hidden flex flex-col md:flex-row flex-1"><nav class="h-full fixed md:relative inset-y-0 left-0 z-20 md:z-0 bg-white text-gray-700 border-r overflow-x-hidden pt-16 print:hidden flex flex-col" data-menu="closed" role="navigation" style="width: 270px;">
+<div class="nav-toc"><p class="caption">Getting Started</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="../../../about.html">About</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="../../../installation.html">Installation</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="../../../dependencies.html">Dependencies</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="../../../quickstart.html">Quickstart Tutorial</a></div></li>
+</ul>
+<p class="caption">API Documentation</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="../../../modopt.html">modopt</a></div><ul>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="../../../modopt.base.html">modopt.base</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.base.backend.html">modopt.base.backend</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.base.np_adjust.html">modopt.base.np_adjust</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.base.observable.html">modopt.base.observable</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.base.transform.html">modopt.base.transform</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.base.types.html">modopt.base.types</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.base.wrappers.html">modopt.base.wrappers</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="../../../modopt.interface.html">modopt.interface</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.interface.errors.html">modopt.interface.errors</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.interface.log.html">modopt.interface.log</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="../../../modopt.math.html">modopt.math</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.math.convolve.html">modopt.math.convolve</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.math.matrix.html">modopt.math.matrix</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.math.metrics.html">modopt.math.metrics</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.math.stats.html">modopt.math.stats</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="../../../modopt.opt.html">modopt.opt</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.opt.algorithms.html">modopt.opt.algorithms</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.opt.cost.html">modopt.opt.cost</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.opt.gradient.html">modopt.opt.gradient</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.opt.linear.html">modopt.opt.linear</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.opt.proximity.html">modopt.opt.proximity</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.opt.reweight.html">modopt.opt.reweight</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="../../../modopt.plot.html">modopt.plot</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.plot.cost_plot.html">modopt.plot.cost_plot</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="../../../modopt.signal.html">modopt.signal</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.signal.filter.html">modopt.signal.filter</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.signal.noise.html">modopt.signal.noise</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.signal.positivity.html">modopt.signal.positivity</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.signal.svd.html">modopt.signal.svd</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.signal.validation.html">modopt.signal.validation</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="../../../modopt.signal.wavelet.html">modopt.signal.wavelet</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="../../../z_ref.html">References</a></div></li>
+</ul>
+<p class="caption">Examples</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="../../../plugin_example.html">Plugin Example</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="../../../notebooks.html">Notebooks</a></div><ul class="simple">
+</ul>
+</li>
+</ul>
+<p class="caption">Guidelines</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="../../../contributing.html">Contributing</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="../../../citing.html">Citing this Package</a></div></li>
+</ul>
 </div>
+<button aria-label="Close menu" class="text-4xl text-gray-800 p-4 bottom-0 hover:text-pink-500 md:hidden focus:text-pink-500 self-center" id="closeNavBtn" title="Close menu">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="overflow-y-auto md:w-full flex flex-col flex-1" id="main-wrapper">
+<main class="px-5 md:ml-fluid flex-1" role="main">
+<h1>Source code for modopt.math.stats</h1><pre>
+<code><span class="c1"># -*- coding: utf-8 -*-</span>
 
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples.html">1. ModOpt Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modopt.html">2. modopt package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../modopt.html#subpackages">2.1. Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../modopt.base.html">2.1.1. modopt.base package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../modopt.interface.html">2.1.2. modopt.interface package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../modopt.math.html">2.1.3. modopt.math package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../modopt.opt.html">2.1.4. modopt.opt package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../modopt.plot.html">2.1.5. modopt.plot package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../modopt.signal.html">2.1.6. modopt.signal package</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../modopt.html#submodules">2.2. Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../modopt.info.html">2.2.1. modopt.info module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../modopt.html#module-modopt">2.3. Module contents</a></li>
-</ul>
-</li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">modopt</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-        
-      <li>modopt.math.stats</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <h1>Source code for modopt.math.stats</h1><div class="highlight"><pre>
-<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="sd">&quot;&quot;&quot;STATISTICS ROUTINES</span>
+<span class="sd">"""STATISTICS ROUTINES.</span>
 
 <span class="sd">This module contains methods for basic statistics.</span>
 
 <span class="sd">:Author: Samuel Farrens &lt;samuel.farrens@cea.fr&gt;</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
-<span class="kn">from</span> <span class="nn">builtins</span> <span class="k">import</span> <span class="nb">zip</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">chi2</span>
+
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="k">import</span> <span class="n">Gaussian2DKernel</span>
+    <span class="kn">from</span> <span class="nn">astropy.convolution</span> <span class="kn">import</span> <span class="n">Gaussian2DKernel</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
     <span class="n">import_astropy</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">import_astropy</span> <span class="o">=</span> <span class="kc">True</span>
 
 
-<div class="viewcode-block" id="gaussian_kernel"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.gaussian_kernel">[docs]</a><span class="k">def</span> <span class="nf">gaussian_kernel</span><span class="p">(</span><span class="n">data_shape</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Gaussian kernel</span>
+<div class="viewcode-block" id="gaussian_kernel"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.gaussian_kernel">[docs]</a><span class="k">def</span> <span class="nf">gaussian_kernel</span><span class="p">(</span><span class="n">data_shape</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s1">'max'</span><span class="p">):</span>
+    <span class="sd">"""Gaussian kernel.</span>
 
 <span class="sd">    This method produces a Gaussian kerenal of a specified size and dispersion</span>
 
@@ -198,63 +133,74 @@
 <span class="sd">        Desiered shape of the kernel</span>
 <span class="sd">    sigma : float</span>
 <span class="sd">        Standard deviation of the kernel</span>
-<span class="sd">    norm : str {&#39;max&#39;, &#39;sum&#39;, &#39;none&#39;}, optional</span>
-<span class="sd">        Normalisation of the kerenl (options are &#39;max&#39;, &#39;sum&#39; or &#39;none&#39;)</span>
+<span class="sd">    norm : {'max', 'sum', 'none'}, optional</span>
+<span class="sd">        Normalisation of the kerenl (options are 'max', 'sum' or 'none',</span>
+<span class="sd">        default is 'max')</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    np.ndarray kernel</span>
+<span class="sd">    numpy.ndarray</span>
+<span class="sd">        Kernel</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ImportError</span>
+<span class="sd">        If Astropy package not found</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        For invalid norm</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; from modopt.math.stats import gaussian_kernel</span>
 <span class="sd">    &gt;&gt;&gt; gaussian_kernel((3, 3), 1)</span>
-<span class="sd">    array([[ 0.36787944,  0.60653066,  0.36787944],</span>
-<span class="sd">           [ 0.60653066,  1.        ,  0.60653066],</span>
-<span class="sd">           [ 0.36787944,  0.60653066,  0.36787944]])</span>
+<span class="sd">    array([[0.36787944, 0.60653066, 0.36787944],</span>
+<span class="sd">           [0.60653066, 1.        , 0.60653066],</span>
+<span class="sd">           [0.36787944, 0.60653066, 0.36787944]])</span>
 
-<span class="sd">    &gt;&gt;&gt; gaussian_kernel((3, 3), 1, norm=&#39;sum&#39;)</span>
-<span class="sd">    array([[ 0.07511361,  0.1238414 ,  0.07511361],</span>
-<span class="sd">           [ 0.1238414 ,  0.20417996,  0.1238414 ],</span>
-<span class="sd">           [ 0.07511361,  0.1238414 ,  0.07511361]])</span>
+<span class="sd">    &gt;&gt;&gt; gaussian_kernel((3, 3), 1, norm='sum')</span>
+<span class="sd">    array([[0.07511361, 0.1238414 , 0.07511361],</span>
+<span class="sd">           [0.1238414 , 0.20417996, 0.1238414 ],</span>
+<span class="sd">           [0.07511361, 0.1238414 , 0.07511361]])</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
-
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">import_astropy</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
-        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s1">&#39;Astropy package not found.&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s1">'Astropy package not found.'</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">norm</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid norm, options are &quot;max&quot;, &quot;sum&quot; or &quot;none&quot;.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">norm</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'max'</span><span class="p">,</span> <span class="s1">'sum'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">}:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Invalid norm, options are "max", "sum" or "none".'</span><span class="p">)</span>
 
-    <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Gaussian2DKernel</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">x_size</span><span class="o">=</span><span class="n">data_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                      <span class="n">y_size</span><span class="o">=</span><span class="n">data_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="n">Gaussian2DKernel</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">x_size</span><span class="o">=</span><span class="n">data_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_size</span><span class="o">=</span><span class="n">data_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+    <span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">norm</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">norm</span> <span class="o">==</span> <span class="s1">'max'</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">kernel</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">kernel</span><span class="p">)</span>
 
-    <span class="k">elif</span> <span class="n">norm</span> <span class="o">==</span> <span class="s1">&#39;sum&#39;</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">norm</span> <span class="o">==</span> <span class="s1">'sum'</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">kernel</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">kernel</span><span class="p">)</span>
 
-    <span class="k">elif</span> <span class="n">norm</span> <span class="o">==</span> <span class="s1">&#39;none&#39;</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">norm</span> <span class="o">==</span> <span class="s1">'none'</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">kernel</span></div>
 
 
-<div class="viewcode-block" id="mad"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.mad">[docs]</a><span class="k">def</span> <span class="nf">mad</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Median absolute deviation</span>
+<div class="viewcode-block" id="mad"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.mad">[docs]</a><span class="k">def</span> <span class="nf">mad</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">"""Median absolute deviation.</span>
 
 <span class="sd">    This method calculates the median absolute deviation of the input data.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    data : np.ndarray</span>
+<span class="sd">    input_data : numpy.ndarray</span>
 <span class="sd">        Input data array</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    float MAD value</span>
+<span class="sd">    float</span>
+<span class="sd">        MAD value</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
 <span class="sd">    &gt;&gt;&gt; from modopt.math.stats import mad</span>
 <span class="sd">    &gt;&gt;&gt; a = np.arange(9).reshape(3, 3)</span>
 <span class="sd">    &gt;&gt;&gt; mad(a)</span>
@@ -268,73 +214,88 @@
 
 <span class="sd">        \mathrm{MAD} = \mathrm{median}\left(|X_i - \mathrm{median}(X)|\right)</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    numpy.median : median function used</span>
 
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span></div>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">input_data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">input_data</span><span class="p">)))</span></div>
 
 
 <div class="viewcode-block" id="mse"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.mse">[docs]</a><span class="k">def</span> <span class="nf">mse</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Mean Squared Error</span>
+    <span class="sd">"""Mean Squared Error.</span>
 
 <span class="sd">    This method returns the Mean Squared Error (MSE) between two data sets.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    data1 : np.ndarray</span>
+<span class="sd">    data1 : numpy.ndarray</span>
 <span class="sd">        First data set</span>
-<span class="sd">    data2 : np.ndarray</span>
+<span class="sd">    data2 : numpy.ndarray</span>
 <span class="sd">        Second data set</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        Mean squared error</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
 <span class="sd">    &gt;&gt;&gt; from modopt.math.stats import mse</span>
 <span class="sd">    &gt;&gt;&gt; a = np.arange(9).reshape(3, 3)</span>
 <span class="sd">    &gt;&gt;&gt; mse(a, a + 2)</span>
 <span class="sd">    4.0</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
-
+<span class="sd">    """</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">data1</span> <span class="o">-</span> <span class="n">data2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="psnr"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.psnr">[docs]</a><span class="k">def</span> <span class="nf">psnr</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;starck&#39;</span><span class="p">,</span> <span class="n">max_pix</span><span class="o">=</span><span class="mi">255</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Peak Signal-to-Noise Ratio</span>
+<div class="viewcode-block" id="psnr"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.psnr">[docs]</a><span class="k">def</span> <span class="nf">psnr</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'starck'</span><span class="p">,</span> <span class="n">max_pix</span><span class="o">=</span><span class="mi">255</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">"""Peak Signal-to-Noise Ratio.</span>
 
 <span class="sd">    This method calculates the Peak Signal-to-Noise Ratio between an two data</span>
 <span class="sd">    sets</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    data1 : np.ndarray</span>
+<span class="sd">    data1 : numpy.ndarray</span>
 <span class="sd">        First data set</span>
-<span class="sd">    data2 : np.ndarray</span>
+<span class="sd">    data2 : numpy.ndarray</span>
 <span class="sd">        Second data set</span>
-<span class="sd">    method : str {&#39;starck&#39;, &#39;wiki&#39;}, optional</span>
-<span class="sd">        PSNR implementation, default (&#39;starck&#39;)</span>
+<span class="sd">    method : {'starck', 'wiki'}, optional</span>
+<span class="sd">        PSNR implementation (default  is 'starck')</span>
 <span class="sd">    max_pix : int, optional</span>
-<span class="sd">        Maximum number of pixels, default (max_pix=255)</span>
+<span class="sd">        Maximum number of pixels (default is ``255``)</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    float PSNR value</span>
+<span class="sd">    float</span>
+<span class="sd">        PSNR value</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        For invalid PSNR method</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
 <span class="sd">    &gt;&gt;&gt; from modopt.math.stats import psnr</span>
 <span class="sd">    &gt;&gt;&gt; a = np.arange(9).reshape(3, 3)</span>
 <span class="sd">    &gt;&gt;&gt; psnr(a, a + 2)</span>
 <span class="sd">    12.041199826559248</span>
 
-<span class="sd">    &gt;&gt;&gt; psnr(a, a + 2, method=&#39;wiki&#39;)</span>
-<span class="sd">    42.110203695399477</span>
+<span class="sd">    &gt;&gt;&gt; psnr(a, a + 2, method='wiki')</span>
+<span class="sd">    42.11020369539948</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    &#39;starck&#39;:</span>
+<span class="sd">    'starck':</span>
 
-<span class="sd">        Implements eq.3.7 from _[S2010]</span>
+<span class="sd">        Implements eq.3.7 from :cite:`starck2010`</span>
 
-<span class="sd">    &#39;wiki&#39;:</span>
+<span class="sd">    'wiki':</span>
 
 <span class="sd">        Implements PSNR equation on</span>
 <span class="sd">        https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio</span>
@@ -344,26 +305,25 @@
 <span class="sd">            \mathrm{PSNR} = 20\log_{10}(\mathrm{MAX}_I -</span>
 <span class="sd">            10\log_{10}(\mathrm{MSE}))</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">'starck'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data1</span><span class="p">)))</span>
+                <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">data1</span> <span class="o">-</span> <span class="n">data2</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;starck&#39;</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">'wiki'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">max_pix</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">mse</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)))</span>
 
-        <span class="k">return</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">data1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span> <span class="o">-</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data1</span><span class="p">)))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">data1</span> <span class="o">-</span> <span class="n">data2</span><span class="p">)))</span>
-
-    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;wiki&#39;</span><span class="p">:</span>
-
-        <span class="k">return</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">max_pix</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">*</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">mse</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)))</span>
-
-    <span class="k">else</span><span class="p">:</span>
-
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid PSNR method. Options are &quot;starck&quot; and &#39;</span>
-                         <span class="s1">&#39;&quot;wiki&quot;&#39;</span><span class="p">)</span></div>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="s1">'Invalid PSNR method. Options are "starck" and "wiki"'</span><span class="p">,</span>
+    <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="psnr_stack"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.psnr_stack">[docs]</a><span class="k">def</span> <span class="nf">psnr_stack</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;starck&#39;</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Peak Signa-to-Noise for stack of images</span>
+<div class="viewcode-block" id="psnr_stack"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.psnr_stack">[docs]</a><span class="k">def</span> <span class="nf">psnr_stack</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'starck'</span><span class="p">):</span>
+    <span class="sd">"""Peak Signa-to-Noise for stack of images.</span>
 
 <span class="sd">    This method calculates the PSNRs for two stacks of 2D arrays.</span>
 <span class="sd">    By default the metod returns the mean value of the PSNRs, but any other</span>
@@ -371,19 +331,20 @@
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    data1 : np.ndarray</span>
+<span class="sd">    data1 : numpy.ndarray</span>
 <span class="sd">        Stack of images, 3D array</span>
-<span class="sd">    data2 : np.ndarray</span>
+<span class="sd">    data2 : numpy.ndarray</span>
 <span class="sd">        Stack of recovered images, 3D array</span>
-<span class="sd">    method : str {&#39;starck&#39;, &#39;wiki&#39;}, optional</span>
-<span class="sd">        PSNR implementation, default (&#39;starck&#39;)</span>
 <span class="sd">    metric : function</span>
 <span class="sd">        The desired metric to be applied to the PSNR values (default is</span>
-<span class="sd">        &#39;np.mean&#39;)</span>
+<span class="sd">        ``numpy.mean``)</span>
+<span class="sd">    method : {'starck', 'wiki'}, optional</span>
+<span class="sd">        PSNR implementation (default is 'starck')</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    float metric result of PSNR values</span>
+<span class="sd">    float</span>
+<span class="sd">        Metric result of PSNR values</span>
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
@@ -392,41 +353,49 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
 <span class="sd">    &gt;&gt;&gt; from modopt.math.stats import psnr_stack</span>
 <span class="sd">    &gt;&gt;&gt; a = np.arange(18).reshape(2, 3, 3)</span>
 <span class="sd">    &gt;&gt;&gt; psnr_stack(a, a + 2)</span>
 <span class="sd">    12.041199826559248</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    numpy.mean : default metric</span>
 
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="n">data1</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">data2</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input data must be a 3D np.ndarray&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Input data must be a 3D np.ndarray'</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">metric</span><span class="p">([</span><span class="n">psnr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span>
-                  <span class="nb">zip</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)])</span></div>
+    <span class="k">return</span> <span class="n">metric</span><span class="p">([</span>
+        <span class="n">psnr</span><span class="p">(</span><span class="n">i_elem</span><span class="p">,</span> <span class="n">j_elem</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i_elem</span><span class="p">,</span> <span class="n">j_elem</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+    <span class="p">])</span></div>
 
 
-<div class="viewcode-block" id="sigma_mad"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.sigma_mad">[docs]</a><span class="k">def</span> <span class="nf">sigma_mad</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Standard deviation from MAD</span>
+<div class="viewcode-block" id="sigma_mad"><a class="viewcode-back" href="../../../modopt.math.stats.html#modopt.math.stats.sigma_mad">[docs]</a><span class="k">def</span> <span class="nf">sigma_mad</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">"""MAD Standard Deviation.</span>
 
 <span class="sd">    This method calculates the standard deviation of the input data from the</span>
 <span class="sd">    MAD.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    data : np.ndarray</span>
+<span class="sd">    input_data : numpy.ndarray</span>
 <span class="sd">        Input data array</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    float sigma value</span>
+<span class="sd">    float</span>
+<span class="sd">        Sigma value</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
 <span class="sd">    &gt;&gt;&gt; from modopt.math.stats import sigma_mad</span>
 <span class="sd">    &gt;&gt;&gt; a = np.arange(9).reshape(3, 3)</span>
 <span class="sd">    &gt;&gt;&gt; sigma_mad(a)</span>
-<span class="sd">    2.9651999999999998</span>
+<span class="sd">    2.9652</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -439,48 +408,43 @@
 
 <span class="sd">        \sigma = 1.4826 \mathrm{MAD}(X)</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">return</span> <span class="mf">1.4826</span> <span class="o">*</span> <span class="n">mad</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
-</pre></div>
-
-           </div>
-           
-          </div>
-          <footer>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2017, Samuel Farrens
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-  
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
-    
-   
-
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="mf">1.4826</span> <span class="o">*</span> <span class="n">mad</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span></div>
+</code></pre>
+</main>
+<footer class="mt-20 px-5 md:ml-fluid mb-4 flex-shrink-0 text-sm text-gray-700" role="contentinfo">© Copyright 2020, Samuel Farrens Last updated: 09 Apr, 2021. Made with <a href="https://www.sphinx-doc.org">Sphinx 3.5.2</a></footer>
+</div>
+<div class="sticky bottom-0 md:hidden print:hidden bg-white">
+<div class="flex justify-center items-center">
+<button aria-labelledby="menuLabel" class="text-3xl p-4 flex items-center focus:bg-gray-200" id="openNavBtn">
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+<span class="pl-2 text-sm font-medium uppercase tracking-wide text-gray-700" id="menuLabel">Menu</span>
+</button><button aria-labelledby="searchLabel" class="text-3xl p-4 flex items-center focus:bg-gray-200" id="openSearchBtn">
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+<span class="pl-2 text-sm font-medium uppercase tracking-wide text-gray-700" id="searchLabel">Search</span>
+</button>
+</div>
+</div>
+<div class="w-full fixed bottom-0 left-0 z-10 bg-gray-900 overflow-x-hidden pt-10 flex flex-col items-center md:hidden" data-menu="closed" id="search-pane">
+<h4 class="text-xl text-white mb-4" id="search-label">Enter search term</h4><form action="../../../search.html" class="flex w-full justify-between items-center max-w-sm px-12" id="searchbox" method="get">
+<input aria-labelledby="search-label" class="p-2 flex-1" name="q" placeholder="Search the docs" type="search"/>
+<button aria-label="Get search results" class="p-2 text-white bg-gray-700 hover:bg-gray-200 hover:text-pink-500 focus:bg-gray-200 focus:text-pink-500 tooltipped tooltipped-sw">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+</form>
+<button aria-label="Close menu" class="text-4xl text-gray-200 p-4 bottom-0 hover:text-pink-500 md:hidden focus:text-pink-500 self-center" id="closeSearchBtn" title="Close menu">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</div>
+<div class="fixed bottom-0 right-0 opacity-0 p-4 m-4 bg-gray-900 text-gray-100 transition transform duration-500 translate-y-full" id="snackbar"></div>
+<div class="fixed inset-0 bg-black bg-opacity-50" id="screen" style="display: none;"></div>
+</div>
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js">
+</script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script defer="" src="../../../_static/theme.js"></script>
 </body>
 </html>

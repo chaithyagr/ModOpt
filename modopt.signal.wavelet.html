@@ -1,449 +1,396 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>2.1.6.1.6. modopt.signal.wavelet module &mdash; modopt 1.0 documentation</title>
-  
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.2.1. modopt.info module" href="modopt.info.html" />
-    <link rel="prev" title="2.1.6.1.5. modopt.signal.validation module" href="modopt.signal.validation.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="index.html" class="icon icon-home"> modopt
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                1.0
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="Docutils 0.17: http://docutils.sourceforge.net/" name="generator"/>
+<title>
+      modopt.signal.wavelet | modopt v1.5.0
+    </title>
+<link href="_static/pygments.css" rel="stylesheet"/>
+<link href="_static/theme.css" rel="stylesheet"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="z_ref.html" rel="next" title="References"/>
+<link href="modopt.signal.validation.html" rel="prev" title="modopt.signal.validation"/>
+</head><body class="text-gray-900 antialiased min-h-screen md:h-screen flex flex-col">
+<a class="block text-xl bg-white px-8 py-4 z-20 absolute top-0 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#modopt-signal-wavelet" title="Skip navigation links">Skip to content</a>
+<header class="md:sticky top-0 bg-gray-900 shadow-md flex md:flex-row justify-between items-center z-10"><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 tooltipped tooltipped-se" href="index.html">
+<h2 class="text-xl text-gray-100 mx-5 py-4">modopt v1.5.0</h2>
+</a><form action="search.html" class="hidden md:flex my-auto mx-5 justify-between items-center print:hidden" id="searchbox" method="get">
+<input aria-label="Search the docs" class="p-2 flex-1 focus:bg-yellow-100" id="search-input" name="q" placeholder="Search the docs" style="width: 300px;" type="search"/>
+<button aria-label="Get search results" class="p-2 text-white bg-gray-700 hover:bg-gray-200 hover:text-pink-500 focus:bg-gray-200 focus:text-pink-500 tooltipped tooltipped-sw">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+</form>
+</header>
+<div class="md:overflow-hidden flex flex-col md:flex-row flex-1"><nav class="h-full fixed md:relative inset-y-0 left-0 z-20 md:z-0 bg-white text-gray-700 border-r overflow-x-hidden pt-16 print:hidden flex flex-col" data-menu="closed" role="navigation" style="width: 270px;">
+<div class="nav-toc"><p class="caption">Getting Started</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="about.html">About</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="installation.html">Installation</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="dependencies.html">Dependencies</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="quickstart.html">Quickstart Tutorial</a></div></li>
+</ul>
+<p class="caption">API Documentation</p>
+<ul class="current">
+<li class="toctree-l1 current expanded"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.html">modopt</a></div><ul class="current">
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.base.html">modopt.base</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.backend.html">modopt.base.backend</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.np_adjust.html">modopt.base.np_adjust</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.observable.html">modopt.base.observable</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.transform.html">modopt.base.transform</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.types.html">modopt.base.types</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.base.wrappers.html">modopt.base.wrappers</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.interface.html">modopt.interface</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.interface.errors.html">modopt.interface.errors</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.interface.log.html">modopt.interface.log</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.math.html">modopt.math</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.convolve.html">modopt.math.convolve</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.matrix.html">modopt.math.matrix</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.metrics.html">modopt.math.metrics</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.math.stats.html">modopt.math.stats</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.opt.html">modopt.opt</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.algorithms.html">modopt.opt.algorithms</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.cost.html">modopt.opt.cost</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.gradient.html">modopt.opt.gradient</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.linear.html">modopt.opt.linear</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.proximity.html">modopt.opt.proximity</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.opt.reweight.html">modopt.opt.reweight</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.plot.html">modopt.plot</a></div><ul>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.plot.cost_plot.html">modopt.plot.cost_plot</a></div></li>
+</ul>
+</li>
+<li class="toctree-l2 current expanded"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="modopt.signal.html">modopt.signal</a></div><ul class="current">
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.filter.html">modopt.signal.filter</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.noise.html">modopt.signal.noise</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.positivity.html">modopt.signal.positivity</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.svd.html">modopt.signal.svd</a></div></li>
+<li class="toctree-l3"><div class="nav-link"><a class="reference internal" href="modopt.signal.validation.html">modopt.signal.validation</a></div></li>
+<li class="toctree-l3 current expanded"><div class="nav-link"><a class="current reference internal" href="#">modopt.signal.wavelet</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="z_ref.html">References</a></div></li>
+</ul>
+<p class="caption">Examples</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="plugin_example.html">Plugin Example</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><svg aria-hidden="true" class="expand" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg><a class="reference internal" href="notebooks.html">Notebooks</a></div><ul class="simple">
+</ul>
+</li>
+</ul>
+<p class="caption">Guidelines</p>
+<ul>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="contributing.html">Contributing</a></div></li>
+<li class="toctree-l1"><div class="nav-link"><a class="reference internal" href="citing.html">Citing this Package</a></div></li>
+</ul>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="examples.html">1. ModOpt Examples</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modopt.html">2. modopt package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="modopt.html#subpackages">2.1. Subpackages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="modopt.base.html">2.1.1. modopt.base package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.interface.html">2.1.2. modopt.interface package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.math.html">2.1.3. modopt.math package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.opt.html">2.1.4. modopt.opt package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modopt.plot.html">2.1.5. modopt.plot package</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="modopt.signal.html">2.1.6. modopt.signal package</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="modopt.html#submodules">2.2. Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="modopt.info.html">2.2.1. modopt.info module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="modopt.html#module-modopt">2.3. Module contents</a></li>
-</ul>
-</li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">modopt</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="modopt.html">2. modopt package</a> &raquo;</li>
-        
-          <li><a href="modopt.signal.html">2.1.6. modopt.signal package</a> &raquo;</li>
-        
-      <li>2.1.6.1.6. modopt.signal.wavelet module</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/modopt.signal.wavelet.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="module-modopt.signal.wavelet">
-<span id="modopt-signal-wavelet-module"></span><h1>2.1.6.1.6. modopt.signal.wavelet module<a class="headerlink" href="#module-modopt.signal.wavelet" title="Permalink to this headline">¶</a></h1>
-<p>WAVELET MODULE</p>
+<button aria-label="Close menu" class="text-4xl text-gray-800 p-4 bottom-0 hover:text-pink-500 md:hidden focus:text-pink-500 self-center" id="closeNavBtn" title="Close menu">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="overflow-y-auto md:w-full flex flex-col flex-1" id="main-wrapper">
+<main class="px-5 md:ml-fluid flex-1" role="main">
+<section id="module-modopt.signal.wavelet">
+<span id="modopt-signal-wavelet"></span><h1>modopt.signal.wavelet<a aria-label="Copy link to section: modopt.signal.wavelet." class="headerlink tooltipped tooltipped-ne" href="#module-modopt.signal.wavelet" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h1>
+<p>WAVELET MODULE.</p>
 <p>This module contains methods for performing wavelet transformations using iSAP</p>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
-<dd class="field-odd"><p>Samuel Farrens &lt;<a class="reference external" href="mailto:samuel&#46;farrens&#37;&#52;&#48;cea&#46;fr">samuel<span>&#46;</span>farrens<span>&#64;</span>cea<span>&#46;</span>fr</a>&gt;</p>
+<dd class="field-odd"><p>Samuel Farrens &lt;<a class="reference external" href="mailto:samuel.farrens%40cea.fr">samuel<span>.</span>farrens<span>@</span>cea<span>.</span>fr<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>&gt;</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
 <p>This module serves as a wrapper for the wavelet transformation code
-<cite>mr_transform</cite>, which is part of the Sparse2D package in iSAP. This executable
+<cite>mr_transform</cite>, which is part of the Sparse2D package. This executable
 should be installed and built before using these methods.</p>
-<p>Sparse2D Repository: <a class="reference external" href="https://github.com/CosmoStat/Sparse2D">https://github.com/CosmoStat/Sparse2D</a></p>
-<dl class="function">
-<dt id="modopt.signal.wavelet.execute">
-<code class="sig-prename descclassname">modopt.signal.wavelet.</code><code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param">command_line</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.signal.wavelet.execute" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute</p>
+<p>Sparse2D Repository: <a class="reference external" href="https://github.com/CosmoStat/Sparse2D">https://github.com/CosmoStat/Sparse2D<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
+<dl class="py function code-definition">
+<dt class="accordion" id="modopt.signal.wavelet.getrandbits">
+<code class="sig-name descname">getrandbits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="o">/</span></em><span class="sig-paren">)</span><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.signal.wavelet.getrandbits" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+</dd></dl>
+<dl class="py function code-definition">
+<dt class="accordion" id="modopt.signal.wavelet.execute">
+<code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command_line</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#execute"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.signal.wavelet.execute" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Execute.</p>
 <p>This method executes a given command line.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>command_line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – The command line to be executed</p>
+<dd class="field-odd"><p><strong>command_line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – The command line to be executed</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Stdout and stderr (both type str)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)">tuple</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.7)"><strong>TypeError</strong></a> – For invalid input type</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.9)"><strong>TypeError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – For invalid input type</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="function">
-<dt id="modopt.signal.wavelet.call_mr_transform">
-<code class="sig-prename descclassname">modopt.signal.wavelet.</code><code class="sig-name descname">call_mr_transform</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">opt=''</em>, <em class="sig-param">path='./'</em>, <em class="sig-param">remove_files=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#call_mr_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.signal.wavelet.call_mr_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call mr_transform</p>
+<dl class="py function code-definition">
+<dt class="accordion" id="modopt.signal.wavelet.call_mr_transform">
+<code class="sig-name descname">call_mr_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em>, <em class="sig-param"><span class="n">opt</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">'./'</span></em>, <em class="sig-param"><span class="n">remove_files</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#call_mr_transform"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.signal.wavelet.call_mr_transform" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Call mr_transform.</p>
 <p>This method calls the iSAP module mr_transform</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>np.ndarray</em>) – Input data, 2D array</p></li>
-<li><p><strong>opt</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>optional</em>) – Options to be passed to mr_transform</p></li>
-<li><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>optional</em>) – Path for output files (default is ‘./’)</p></li>
-<li><p><strong>remove_files</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Option to remove output files (default is ‘True’)</p></li>
+<li><p><strong>input_data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Input data, 2D array</p></li>
+<li><p><strong>opt</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Options to be passed to mr_transform (default is ‘’)</p></li>
+<li><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Path for output files (default is ‘./’)</p></li>
+<li><p><strong>remove_files</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to remove output files (default is <code class="docutils literal notranslate">True</code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>Results of mr_transform</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.ndarray results of mr_transform</p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)">numpy.ndarray<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a> – If the input data is not a 2D numpy array</p>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ImportError" title="(in Python v3.9)"><strong>ImportError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – If the Astropy package is not found</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – If the input data is not a 2D numpy array</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.9)"><strong>RuntimeError</strong><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a> – For exception encountered in call to mr_transform</p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.signal.wavelet</span> <span class="k">import</span> <span class="o">*</span>
+<div class="doctest highlight">
+<div class="code-header">
+<span class="code-lang">python</span>
+<button aria-label="Copy this code" class="copy tooltipped tooltipped-nw"><svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/xvg"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button>
+</div>
+<pre><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.signal.wavelet</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">call_mr_transform</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">call_mr_transform</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> 
 <span class="go">array([[[-1.5       , -1.125     , -0.75      ],</span>
 <span class="go">        [-0.375     ,  0.        ,  0.375     ],</span>
 <span class="go">        [ 0.75      ,  1.125     ,  1.5       ]],</span>
-</pre></div>
-</div>
-<blockquote>
-<div><dl class="simple">
-<dt>[[-1.5625    , -1.171875  , -0.78125   ],</dt><dd><p>[-0.390625  ,  0.        ,  0.390625  ],
-[ 0.78125   ,  1.171875  ,  1.5625    ]],</p>
-</dd>
-<dt>[[-0.5859375 , -0.43945312, -0.29296875],</dt><dd><p>[-0.14648438,  0.        ,  0.14648438],
-[ 0.29296875,  0.43945312,  0.5859375 ]],</p>
-</dd>
-<dt>[[ 3.6484375 ,  3.73632812,  3.82421875],</dt><dd><p>[ 3.91210938,  4.        ,  4.08789062],
-[ 4.17578125,  4.26367188,  4.3515625 ]]], dtype=float32)</p>
-</dd>
-</dl>
-</div></blockquote>
-</dd></dl>
 
-<dl class="function">
-<dt id="modopt.signal.wavelet._trim_filter">
-<code class="sig-prename descclassname">modopt.signal.wavelet.</code><code class="sig-name descname">_trim_filter</code><span class="sig-paren">(</span><em class="sig-param">filter_array</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#_trim_filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.signal.wavelet._trim_filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Trim the filters to the minimal size</p>
+<span class="go">       [[-1.5625    , -1.171875  , -0.78125   ],</span>
+<span class="go">        [-0.390625  ,  0.        ,  0.390625  ],</span>
+<span class="go">        [ 0.78125   ,  1.171875  ,  1.5625    ]],</span>
+
+<span class="go">       [[-0.5859375 , -0.43945312, -0.29296875],</span>
+<span class="go">        [-0.14648438,  0.        ,  0.14648438],</span>
+<span class="go">        [ 0.29296875,  0.43945312,  0.5859375 ]],</span>
+
+<span class="go">       [[ 3.6484375 ,  3.73632812,  3.82421875],</span>
+<span class="go">        [ 3.91210938,  4.        ,  4.08789062],</span>
+<span class="go">        [ 4.17578125,  4.26367188,  4.3515625 ]]])</span>
+</code></pre></div>
+</dd></dl>
+<dl class="py function code-definition">
+<dt class="accordion" id="modopt.signal.wavelet.trim_filter">
+<code class="sig-name descname">trim_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filter_array</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#trim_filter"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.signal.wavelet.trim_filter" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Trim the filters to the minimal size.</p>
 <p>This method will get rid of the extra zero coefficients in the filter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>filter_array</strong> (<em>np.ndarray</em>) – The filter to be trimmed</p>
+<dd class="field-odd"><p><strong>filter_array</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – The filter to be trimmed</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>Trimmed filter</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.ndarray Trimmed filter</p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)">numpy.ndarray<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="function">
-<dt id="modopt.signal.wavelet.get_mr_filters">
-<code class="sig-prename descclassname">modopt.signal.wavelet.</code><code class="sig-name descname">get_mr_filters</code><span class="sig-paren">(</span><em class="sig-param">data_shape</em>, <em class="sig-param">opt=''</em>, <em class="sig-param">coarse=False</em>, <em class="sig-param">trim=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#get_mr_filters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.signal.wavelet.get_mr_filters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get mr_transform filters</p>
-<p>This method obtains wavelet filters by calling mr_transform</p>
+<dl class="py function code-definition">
+<dt class="accordion" id="modopt.signal.wavelet.get_mr_filters">
+<code class="sig-name descname">get_mr_filters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_shape</span></em>, <em class="sig-param"><span class="n">opt</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">coarse</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">trim</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#get_mr_filters"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.signal.wavelet.get_mr_filters" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Get mr_transform filters.</p>
+<p>This method obtains wavelet filters by calling mr_transform.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data_shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a>) – 2D data shape</p></li>
-<li><p><strong>opt</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>, </em><em>optional</em>) – List of additonal mr_transform options</p></li>
-<li><p><strong>coarse</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Option to keep coarse scale (default is ‘False’)</p></li>
-<li><p><strong>trim</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Option to trim the filters down to their minimal size</p></li>
+<li><p><strong>data_shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – 2D data shape</p></li>
+<li><p><strong>opt</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – List of additonal mr_transform options (default is ‘’)</p></li>
+<li><p><strong>coarse</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to keep coarse scale (default is <code class="docutils literal notranslate">False</code>)</p></li>
+<li><p><strong>trim</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to trim the filters down to their minimal size
+(default is <code class="docutils literal notranslate">False</code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>3D array of wavelet filters. If <code class="docutils literal notranslate">trim=True</code> this may result in an
+array with different filter sizes and the output object will have
+<code class="docutils literal notranslate">dtype('O')</code>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.ndarray 3D array of wavelet filters</p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)">numpy.ndarray<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
+<div class="admonition seealso" id="modopt-signal-wavelet-note-1">
+<p class="admonition-title">See also<a aria-label="Copy link to this seealso." class="headerlink tooltipped tooltipped-ne" href="#modopt-signal-wavelet-note-1" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="#modopt.signal.wavelet.trim_filter" title="modopt.signal.wavelet.trim_filter"><code class="xref py py-obj docutils literal notranslate">trim_filter</code></a></dt><dd><p>The function for trimming the wavelet filters</p>
+</dd>
+</dl>
+</div>
 </dd></dl>
-
-<dl class="function">
-<dt id="modopt.signal.wavelet.filter_convolve">
-<code class="sig-prename descclassname">modopt.signal.wavelet.</code><code class="sig-name descname">filter_convolve</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">filters</em>, <em class="sig-param">filter_rot=False</em>, <em class="sig-param">method='scipy'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#filter_convolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.signal.wavelet.filter_convolve" title="Permalink to this definition">¶</a></dt>
-<dd><p>Filter convolve</p>
-<p>This method convolves the input image with the wavelet filters</p>
+<dl class="py function code-definition">
+<dt class="accordion" id="modopt.signal.wavelet.filter_convolve">
+<code class="sig-name descname">filter_convolve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em>, <em class="sig-param"><span class="n">filters</span></em>, <em class="sig-param"><span class="n">filter_rot</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'scipy'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#filter_convolve"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.signal.wavelet.filter_convolve" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Filter convolve.</p>
+<p>This method convolves the input image with the wavelet filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>np.ndarray</em>) – Input data, 2D array</p></li>
-<li><p><strong>filters</strong> (<em>np.ndarray</em>) – Wavelet filters, 3D array</p></li>
-<li><p><strong>filter_rot</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Option to rotate wavelet filters (default is ‘False’)</p></li>
-<li><p><strong>method</strong> (<em>str {'astropy'</em><em>, </em><em>'scipy'}</em><em>, </em><em>optional</em>) – Convolution method (default is ‘scipy’)</p></li>
+<li><p><strong>input_data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Input data, 2D array</p></li>
+<li><p><strong>filters</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Wavelet filters, 3D array</p></li>
+<li><p><strong>filter_rot</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to rotate wavelet filters (default is <cite>False</cite>)</p></li>
+<li><p><strong>method</strong> (<em>{'astropy'</em><em>, </em><em>'scipy'}</em><em>, </em><em>optional</em>) – Convolution method (default is ‘scipy’)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>Convolved data</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.ndarray convolved data</p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)">numpy.ndarray<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.signal.wavelet</span> <span class="k">import</span> <span class="n">filter_convolve</span>
+<div class="doctest highlight">
+<div class="code-header">
+<span class="code-lang">python</span>
+<button aria-label="Copy this code" class="copy tooltipped tooltipped-nw"><svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/xvg"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button>
+</div>
+<pre><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.signal.wavelet</span> <span class="kn">import</span> <span class="n">filter_convolve</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">filter_convolve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="go">array([[[  174.,   165.,   174.],</span>
-<span class="go">        [   93.,    84.,    93.],</span>
-<span class="go">        [  174.,   165.,   174.]],</span>
-</pre></div>
-</div>
-<blockquote>
-<div><dl class="simple">
-<dt>[[  498.,   489.,   498.],</dt><dd><p>[  417.,   408.,   417.],
-[  498.,   489.,   498.]],</p>
-</dd>
-<dt>[[  822.,   813.,   822.],</dt><dd><p>[  741.,   732.,   741.],
-[  822.,   813.,   822.]],</p>
-</dd>
-<dt>[[ 1146.,  1137.,  1146.],</dt><dd><p>[ 1065.,  1056.,  1065.],
-[ 1146.,  1137.,  1146.]]])</p>
-</dd>
-</dl>
-</div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">filter_convolve</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">filter_rot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="go">array([[ 14550.,  14586.,  14550.],</span>
-<span class="go">       [ 14874.,  14910.,  14874.],</span>
-<span class="go">       [ 14550.,  14586.,  14550.]])</span>
-</pre></div>
-</div>
-</dd></dl>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filter_convolve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'astropy'</span><span class="p">)</span>
+<span class="go">array([[[ 174.,  165.,  174.],</span>
+<span class="go">        [  93.,   84.,   93.],</span>
+<span class="go">        [ 174.,  165.,  174.]],</span>
 
-<dl class="function">
-<dt id="modopt.signal.wavelet.filter_convolve_stack">
-<code class="sig-prename descclassname">modopt.signal.wavelet.</code><code class="sig-name descname">filter_convolve_stack</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">filters</em>, <em class="sig-param">filter_rot=False</em>, <em class="sig-param">method='scipy'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#filter_convolve_stack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modopt.signal.wavelet.filter_convolve_stack" title="Permalink to this definition">¶</a></dt>
-<dd><p>Filter convolve</p>
+<span class="go">       [[ 498.,  489.,  498.],</span>
+<span class="go">        [ 417.,  408.,  417.],</span>
+<span class="go">        [ 498.,  489.,  498.]],</span>
+
+<span class="go">       [[ 822.,  813.,  822.],</span>
+<span class="go">        [ 741.,  732.,  741.],</span>
+<span class="go">        [ 822.,  813.,  822.]],</span>
+
+<span class="go">       [[1146., 1137., 1146.],</span>
+<span class="go">        [1065., 1056., 1065.],</span>
+<span class="go">        [1146., 1137., 1146.]]])</span>
+</code></pre></div>
+<div class="doctest highlight">
+<div class="code-header">
+<span class="code-lang">python</span>
+<button aria-label="Copy this code" class="copy tooltipped tooltipped-nw"><svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/xvg"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button>
+</div>
+<pre><code><span class="gp">&gt;&gt;&gt; </span><span class="n">filter_convolve</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'astropy'</span><span class="p">,</span> <span class="n">filter_rot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">array([[14550., 14586., 14550.],</span>
+<span class="go">       [14874., 14910., 14874.],</span>
+<span class="go">       [14550., 14586., 14550.]])</span>
+</code></pre></div>
+</dd></dl>
+<dl class="py function code-definition">
+<dt class="accordion" id="modopt.signal.wavelet.filter_convolve_stack">
+<code class="sig-name descname">filter_convolve_stack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em>, <em class="sig-param"><span class="n">filters</span></em>, <em class="sig-param"><span class="n">filter_rot</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'scipy'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modopt/signal/wavelet.html#filter_convolve_stack"><span class="viewcode-link">[source]</span></a><a aria-label="Copy link to this definition." class="headerlink tooltipped tooltipped-ne" href="#modopt.signal.wavelet.filter_convolve_stack" role="button"><svg pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a><button aria-expanded="false" aria-label="Expand this section" class="expand-more tooltipped tooltipped-nw"><svg aria-hidden="true" pointer-events="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></button></dt>
+<dd class="panel">
+<p>Filter convolve.</p>
 <p>This method convolves the a stack of input images with the wavelet filters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>np.ndarray</em>) – Input data, 3D array</p></li>
-<li><p><strong>filters</strong> (<em>np.ndarray</em>) – Wavelet filters, 3D array</p></li>
-<li><p><strong>filter_rot</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Option to rotate wavelet filters (default is ‘False’)</p></li>
-<li><p><strong>method</strong> (<em>str {'astropy'</em><em>, </em><em>'scipy'}</em><em>, </em><em>optional</em>) – Convolution method (default is ‘scipy’)</p></li>
+<li><p><strong>input_data</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Input data, 3D array</p></li>
+<li><p><strong>filters</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><em>numpy.ndarray</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a>) – Wavelet filters, 3D array</p></li>
+<li><p><strong>filter_rot</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em><svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a><em>, </em><em>optional</em>) – Option to rotate wavelet filters (default is <code class="docutils literal notranslate">False</code>)</p></li>
+<li><p><strong>method</strong> (<em>{'astropy'</em><em>, </em><em>'scipy'}</em><em>, </em><em>optional</em>) – Convolution method (default is ‘scipy’)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>Convolved data</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.ndarray convolved data</p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)">numpy.ndarray<svg aria-hidden="true" class="external-link-icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg></a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.signal.wavelet</span> <span class="k">import</span> <span class="n">filter_convolve_stack</span>
+<div class="doctest highlight">
+<div class="code-header">
+<span class="code-lang">python</span>
+<button aria-label="Copy this code" class="copy tooltipped tooltipped-nw"><svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/xvg"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button>
+</div>
+<pre><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">modopt.signal.wavelet</span> <span class="kn">import</span> <span class="n">filter_convolve_stack</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">filter_convolve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-<span class="go">array([[[   4.,    1.,    4.],</span>
-<span class="go">        [  13.,   10.,   13.],</span>
-<span class="go">        [  22.,   19.,   22.]],</span>
-</pre></div>
-</div>
-<blockquote>
-<div><dl class="simple">
-<dt>[[  13.,   10.,   13.],</dt><dd><p>[  49.,   46.,   49.],
-[  85.,   82.,   85.]],</p>
-</dd>
-<dt>[[  22.,   19.,   22.],</dt><dd><p>[  85.,   82.,   85.],
-[ 148.,  145.,  148.]]])</p>
-</dd>
-</dl>
-</div></blockquote>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filter_convolve_stack</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'astropy'</span><span class="p">)</span>
+<span class="go">array([[[  4.,   1.,   4.],</span>
+<span class="go">        [ 13.,  10.,  13.],</span>
+<span class="go">        [ 22.,  19.,  22.]],</span>
+
+<span class="go">       [[ 13.,  10.,  13.],</span>
+<span class="go">        [ 49.,  46.,  49.],</span>
+<span class="go">        [ 85.,  82.,  85.]],</span>
+
+<span class="go">       [[ 22.,  19.,  22.],</span>
+<span class="go">        [ 85.,  82.,  85.],</span>
+<span class="go">        [148., 145., 148.]]])</span>
+</code></pre></div>
 </dd></dl>
-
-<dl class="function">
-<dt id="modopt.signal.wavelet.getrandbits">
-<code class="sig-prename descclassname">modopt.signal.wavelet.</code><code class="sig-name descname">getrandbits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modopt.signal.wavelet.getrandbits" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+</section>
+</main>
+<footer class="mt-20 px-5 md:ml-fluid mb-4 flex-shrink-0 text-sm text-gray-700" role="contentinfo">© Copyright 2020, Samuel Farrens Last updated: 09 Apr, 2021. Made with <a href="https://www.sphinx-doc.org">Sphinx 3.5.2</a></footer>
 </div>
-
-
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="modopt.info.html" class="btn btn-neutral float-right" title="2.2.1. modopt.info module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="modopt.signal.validation.html" class="btn btn-neutral float-left" title="2.1.6.1.5. modopt.signal.validation module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2017, Samuel Farrens
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-  
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
-    
-   
-
+<div class="sticky bottom-0 md:hidden print:hidden bg-white">
+<div class="flex justify-center items-center">
+<button aria-labelledby="menuLabel" class="text-3xl p-4 flex items-center focus:bg-gray-200" id="openNavBtn">
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+<span class="pl-2 text-sm font-medium uppercase tracking-wide text-gray-700" id="menuLabel">Menu</span>
+</button><button aria-labelledby="searchLabel" class="text-3xl p-4 flex items-center focus:bg-gray-200" id="openSearchBtn">
+<svg aria-hidden="true" class="fill-current h-8 w-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+<span class="pl-2 text-sm font-medium uppercase tracking-wide text-gray-700" id="searchLabel">Search</span>
+</button>
+</div>
+</div>
+<div class="w-full fixed bottom-0 left-0 z-10 bg-gray-900 overflow-x-hidden pt-10 flex flex-col items-center md:hidden" data-menu="closed" id="search-pane">
+<h4 class="text-xl text-white mb-4" id="search-label">Enter search term</h4><form action="search.html" class="flex w-full justify-between items-center max-w-sm px-12" id="searchbox" method="get">
+<input aria-labelledby="search-label" class="p-2 flex-1" name="q" placeholder="Search the docs" type="search"/>
+<button aria-label="Get search results" class="p-2 text-white bg-gray-700 hover:bg-gray-200 hover:text-pink-500 focus:bg-gray-200 focus:text-pink-500 tooltipped tooltipped-sw">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+</button>
+</form>
+<button aria-label="Close menu" class="text-4xl text-gray-200 p-4 bottom-0 hover:text-pink-500 md:hidden focus:text-pink-500 self-center" id="closeSearchBtn" title="Close menu">
+<svg aria-hidden="true" class="fill-current stroke-current h-6 w-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</div>
+<div class="fixed bottom-0 right-0 opacity-0 p-4 m-4 bg-gray-900 text-gray-100 transition transform duration-500 translate-y-full" id="snackbar"></div>
+<div class="fixed inset-0 bg-black bg-opacity-50" id="screen" style="display: none;"></div>
+</div>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
+</script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/doctools.js"></script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script defer="" src="_static/theme.js"></script>
 </body>
 </html>
