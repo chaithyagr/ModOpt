@@ -7,7 +7,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <title>
-      modopt.base.backend | modopt v1.5.0
+      modopt.base.backend | modopt v1.5.1
     </title>
 <link href="../../../_static/pygments.css" rel="stylesheet"/>
 <link href="../../../_static/theme.css" rel="stylesheet"/>
@@ -16,7 +16,7 @@
 </head><body class="text-gray-900 antialiased min-h-screen md:h-screen flex flex-col">
 <a class="block text-xl bg-white px-8 py-4 z-20 absolute top-0 inset-x-0 text-center transform -translate-y-full focus:translate-y-0 focus:outline-none transition-transform duration-75" href="#modopt-base-backend" title="Skip navigation links">Skip to content</a>
 <header class="md:sticky top-0 bg-gray-900 shadow-md flex md:flex-row justify-between items-center z-10"><a aria-label="Back to homepage" class="hover:bg-gray-700 focus:bg-gray-700 tooltipped tooltipped-se" href="../../../index.html">
-<h2 class="text-xl text-gray-100 mx-5 py-4">modopt v1.5.0</h2>
+<h2 class="text-xl text-gray-100 mx-5 py-4">modopt v1.5.1</h2>
 </a><form action="../../../search.html" class="hidden md:flex my-auto mx-5 justify-between items-center print:hidden" id="searchbox" method="get">
 <input aria-label="Search the docs" class="p-2 flex-1 focus:bg-yellow-100" id="search-input" name="q" placeholder="Search the docs" style="width: 300px;" type="search"/>
 <button aria-label="Get search results" class="p-2 text-white bg-gray-700 hover:bg-gray-200 hover:text-pink-500 focus:bg-gray-200 focus:text-pink-500 tooltipped tooltipped-sw">
@@ -112,33 +112,71 @@
 
 <span class="sd">"""</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">util</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
+<span class="kn">from</span> <span class="nn">modopt.interface.errors</span> <span class="kn">import</span> <span class="n">warn</span>
+
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">torch</span>
+    <span class="kn">from</span> <span class="nn">torch.utils.dlpack</span> <span class="kn">import</span> <span class="n">from_dlpack</span> <span class="k">as</span> <span class="n">torch_from_dlpack</span>
+    <span class="kn">from</span> <span class="nn">torch.utils.dlpack</span> <span class="kn">import</span> <span class="n">to_dlpack</span> <span class="k">as</span> <span class="n">torch_to_dlpack</span>
+
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
     <span class="n">import_torch</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">import_torch</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="c1"># Handle the compatibility with variable</span>
-<span class="n">gpu_compatibility</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'cupy'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="s1">'cupy-cudnn'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="n">LIBRARIES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'cupy'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s1">'tensorflow'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s1">'numpy'</span><span class="p">:</span> <span class="n">np</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="k">if</span> <span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">'cupy'</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
-        <span class="n">gpu_compatibility</span><span class="p">[</span><span class="s1">'cupy'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-
-        <span class="k">if</span> <span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">'cupy.cuda.cudnn'</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">gpu_compatibility</span><span class="p">[</span><span class="s1">'cupy-cudnn'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'cupy'</span><span class="p">]</span> <span class="o">=</span> <span class="n">cp</span>
     <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
         <span class="k">pass</span>
+
+<span class="k">if</span> <span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">'tensorflow'</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">tensorflow.experimental</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">tnp</span>
+        <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'tensorflow'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tnp</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="get_backend"><a class="viewcode-back" href="../../../modopt.base.backend.html#modopt.base.backend.get_backend">[docs]</a><span class="k">def</span> <span class="nf">get_backend</span><span class="p">(</span><span class="n">backend</span><span class="p">):</span>
+    <span class="sd">"""Get backend.</span>
+
+<span class="sd">    Returns the backend module for input specified by string</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    backend: str</span>
+<span class="sd">        String holding the backend name. One of `tensorflow`,</span>
+<span class="sd">        `numpy` or `cupy`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        Returns the module for carrying out calculations and the actual backend</span>
+<span class="sd">        that was reverted towards. If the right libraries are not installed,</span>
+<span class="sd">        the function warns and reverts to `numpy` backend</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">backend</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">LIBRARIES</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">or</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="n">backend</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">'</span><span class="si">{0}</span><span class="s1"> backend not possible, please ensure that '</span>
+            <span class="o">+</span> <span class="s1">'the optional libraries are installed.</span><span class="se">\n</span><span class="s1">'</span>
+            <span class="o">+</span> <span class="s1">'Reverting to numpy'</span>
+        <span class="p">)</span>
+        <span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">backend</span><span class="p">))</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="s1">'numpy'</span>
+    <span class="k">return</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="n">backend</span><span class="p">],</span> <span class="n">backend</span></div>
 
 
 <div class="viewcode-block" id="get_array_module"><a class="viewcode-back" href="../../../modopt.base.backend.html#modopt.base.backend.get_array_module">[docs]</a><span class="k">def</span> <span class="nf">get_array_module</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
@@ -158,48 +196,47 @@
 <span class="sd">        The numpy or cupy module</span>
 
 <span class="sd">    """</span>
-    <span class="k">if</span> <span class="n">gpu_compatibility</span><span class="p">[</span><span class="s1">'cupy'</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
-
+    <span class="k">if</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'tensorflow'</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'tensorflow'</span><span class="p">]</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'tensorflow'</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'cupy'</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'cupy'</span><span class="p">]</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'cupy'</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">np</span></div>
 
 
-<div class="viewcode-block" id="move_to_device"><a class="viewcode-back" href="../../../modopt.base.backend.html#modopt.base.backend.move_to_device">[docs]</a><span class="k">def</span> <span class="nf">move_to_device</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
+<div class="viewcode-block" id="change_backend"><a class="viewcode-back" href="../../../modopt.base.backend.html#modopt.base.backend.change_backend">[docs]</a><span class="k">def</span> <span class="nf">change_backend</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">'cupy'</span><span class="p">):</span>
     <span class="sd">"""Move data to device.</span>
 
-<span class="sd">    This method moves data from CPU to GPU if we have the</span>
-<span class="sd">    compatibility to do so. It returns the same data if</span>
-<span class="sd">    it is already on GPU.</span>
+<span class="sd">    This method changes the backend of an array</span>
+<span class="sd">    This can be used to copy data to GPU or to CPU</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    input_data : numpy.ndarray or cupy.ndarray</span>
 <span class="sd">        Input data array to be moved</span>
+<span class="sd">    backend: str, optional</span>
+<span class="sd">        The backend to use, one among `tensorflow`, `cupy` and</span>
+<span class="sd">        `numpy`. Default is `cupy`.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    cupy.ndarray</span>
-<span class="sd">        The CuPy array residing on GPU</span>
+<span class="sd">    backend.ndarray</span>
+<span class="sd">        An ndarray of specified backend</span>
 
 <span class="sd">    """</span>
     <span class="n">xp</span> <span class="o">=</span> <span class="n">get_array_module</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">xp</span> <span class="o">==</span> <span class="n">cp</span><span class="p">:</span>
+    <span class="n">txp</span><span class="p">,</span> <span class="n">target_backend</span> <span class="o">=</span> <span class="n">get_backend</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">xp</span> <span class="o">==</span> <span class="n">txp</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">input_data</span>
-
-    <span class="k">if</span> <span class="n">gpu_compatibility</span><span class="p">[</span><span class="s1">'cupy'</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">'Cupy is not installed, cannot move data to GPU'</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">input_data</span></div>
+    <span class="k">return</span> <span class="n">txp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="move_to_cpu"><a class="viewcode-back" href="../../../modopt.base.backend.html#modopt.base.backend.move_to_cpu">[docs]</a><span class="k">def</span> <span class="nf">move_to_cpu</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
     <span class="sd">"""Move data to CPU.</span>
 
-<span class="sd">    This method moves data from GPU to CPU.It returns the same data if it is</span>
-<span class="sd">    already on CPU.</span>
+<span class="sd">    This method moves data from GPU to CPU.</span>
+<span class="sd">    It returns the same data if it is already on CPU.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -211,13 +248,20 @@
 <span class="sd">    numpy.ndarray</span>
 <span class="sd">        The NumPy array residing on CPU</span>
 
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        if the input does not correspond to any array</span>
 <span class="sd">    """</span>
     <span class="n">xp</span> <span class="o">=</span> <span class="n">get_array_module</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">xp</span> <span class="o">==</span> <span class="n">np</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">xp</span> <span class="o">==</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'numpy'</span><span class="p">]:</span>
         <span class="k">return</span> <span class="n">input_data</span>
-
-    <span class="k">return</span> <span class="n">input_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span></div>
+    <span class="k">elif</span> <span class="n">xp</span> <span class="o">==</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'cupy'</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">input_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">xp</span> <span class="o">==</span> <span class="n">LIBRARIES</span><span class="p">[</span><span class="s1">'tensorflow'</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">input_data</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Cannot identify the array type.'</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="convert_to_tensor"><a class="viewcode-back" href="../../../modopt.base.backend.html#modopt.base.backend.convert_to_tensor">[docs]</a><span class="k">def</span> <span class="nf">convert_to_tensor</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
@@ -254,7 +298,7 @@
     <span class="k">if</span> <span class="n">xp</span> <span class="o">==</span> <span class="n">np</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">dlpack</span><span class="o">.</span><span class="n">from_dlpack</span><span class="p">(</span><span class="n">input_data</span><span class="o">.</span><span class="n">toDlpack</span><span class="p">())</span><span class="o">.</span><span class="n">float</span><span class="p">()</span></div>
+    <span class="k">return</span> <span class="n">torch_from_dlpack</span><span class="p">(</span><span class="n">input_data</span><span class="o">.</span><span class="n">toDlpack</span><span class="p">())</span><span class="o">.</span><span class="n">float</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="convert_to_cupy_array"><a class="viewcode-back" href="../../../modopt.base.backend.html#modopt.base.backend.convert_to_cupy_array">[docs]</a><span class="k">def</span> <span class="nf">convert_to_cupy_array</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
@@ -286,12 +330,12 @@
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">input_data</span><span class="o">.</span><span class="n">is_cuda</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">fromDlpack</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">dlpack</span><span class="o">.</span><span class="n">to_dlpack</span><span class="p">(</span><span class="n">input_data</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">fromDlpack</span><span class="p">(</span><span class="n">torch_to_dlpack</span><span class="p">(</span><span class="n">input_data</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">input_data</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span></div>
 </code></pre>
 </main>
-<footer class="mt-20 px-5 md:ml-fluid mb-4 flex-shrink-0 text-sm text-gray-700" role="contentinfo">© Copyright 2020, Samuel Farrens Last updated: 09 Apr, 2021. Made with <a href="https://www.sphinx-doc.org">Sphinx 3.5.2</a></footer>
+<footer class="mt-20 px-5 md:ml-fluid mb-4 flex-shrink-0 text-sm text-gray-700" role="contentinfo">© Copyright 2020, Samuel Farrens Last updated: 29 Apr, 2021. Made with <a href="https://www.sphinx-doc.org">Sphinx 3.5.2</a></footer>
 </div>
 <div class="sticky bottom-0 md:hidden print:hidden bg-white">
 <div class="flex justify-center items-center">
