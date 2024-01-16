@@ -14,7 +14,14 @@ import numpy as np
 
 from modopt.interface.errors import warn
 
-  
+# Handle the compatibility with variable
+LIBRARIES = {
+    'cupy': None,
+    'tensorflow': None,
+    'numpy': np,
+    'torch': None,
+}
+
 CUPY_AVAILABLE = True
 TORCH_AVAILABLE = True
 try:
@@ -25,15 +32,11 @@ try:
     import torch
     from torch.utils.dlpack import from_dlpack as torch_from_dlpack
     from torch.utils.dlpack import to_dlpack as torch_to_dlpack
+    LIBRARIES['torch'] = torch 
 except ImportError: # pragma: no cover
     TORCH_AVAILABLE = False
 
-# Handle the compatibility with variable
-LIBRARIES = {
-    'cupy': None,
-    'tensorflow': None,
-    'numpy': np,
-}
+
 
 if util.find_spec('cupy') is not None:
     try:
@@ -82,7 +85,7 @@ def get_backend(backend):
     return LIBRARIES[backend], backend
 
 
-def get_array_module(input_data):
+def get_array_module(input_data, get_string=False):
     """Get Array Module.
 
     This method returns the array module, which tells if the data is residing
@@ -92,6 +95,9 @@ def get_array_module(input_data):
     ----------
     input_data : numpy.ndarray, cupy.ndarray or tf.experimental.numpy.ndarray
         Input data array
+    get_string : bool, optional
+        If True, returns the string corresponding to the array module. Default
+        is False.
 
     Returns
     -------
@@ -101,11 +107,14 @@ def get_array_module(input_data):
     """
     if LIBRARIES['tensorflow'] is not None:
         if isinstance(input_data, LIBRARIES['tensorflow'].ndarray):
-            return LIBRARIES['tensorflow']
+            return LIBRARIES['tensorflow'] if not get_string else 'tensorflow'
     if LIBRARIES['cupy'] is not None:
         if isinstance(input_data, LIBRARIES['cupy'].ndarray):
-            return LIBRARIES['cupy']
-    return np
+            return LIBRARIES['cupy'] if not get_string else 'cupy'
+    if LIBRARIES['torch'] is not None:
+        if LIBRARIES['torch'].is_tensor(input_data):
+            return LIBRARIES['torch'] if not get_string else 'torch'
+    return np if not get_string else 'numpy'
 
 
 def change_backend(input_data, backend='cupy'):
@@ -128,8 +137,13 @@ def change_backend(input_data, backend='cupy'):
         An ndarray of specified backend
 
     """
+    cur_backend = get_array_module(input_data, get_string=True)
     xp = get_array_module(input_data)
     txp, target_backend = get_backend(backend)
+    if cur_backend == 'cupy' and target_backend == 'torch':
+        return convert_to_tensor(input_data)
+    elif cur_backend == 'torch' and target_backend == 'cupy':
+        return convert_to_cupy_array(input_data)
     if xp == txp:
         return input_data
     return txp.array(input_data)
