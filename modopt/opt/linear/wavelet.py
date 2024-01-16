@@ -14,7 +14,7 @@ from .base import LinearParent
 if TORCH_AVAILABLE:
     import torch
     try:
-        import pytorch_wavelets as ptwt
+        import ptwt
     except ImportError:
         TORCH_AVAILABLE = False
         warnings.warn("PyTorch Wavelet toolbox not installed. You may not use CupyWaveletTransform.")
