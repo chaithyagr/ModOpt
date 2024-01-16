@@ -43,7 +43,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r develop.txt
           python -m pip install -r docs/requirements.txt
-          python -m pip install astropy "scikit-image<0.20" scikit-learn matplotlib
+          python -m pip install astropy scikit-image scikit-learn matplotlib
           python -m pip install tensorflow>=2.4.1
           python -m pip install twine
           python -m pip install .
@@ -89,7 +89,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
-        python-version: ["3.7", "3.8", "3.9"]
+        python-version: ["3.10"]
 
     steps:
       - name: Checkout
