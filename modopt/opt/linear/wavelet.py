@@ -5,9 +5,19 @@ import warnings
 import numpy as np
 
 from modopt.base.types import check_float
+from modopt.base.backend import TORCH_AVAILABLE, CUPY_AVAILABLE, change_backend
+
 from modopt.signal.wavelet import filter_convolve_stack
 
 from .base import LinearParent
+
+if TORCH_AVAILABLE:
+    import torch
+    import pytorch_wavelets as ptwt
+if CUPY_AVAILABLE:
+    import cupy as cp
+
+
 
 pywt_available = True
 try:
@@ -214,3 +224,112 @@ class WaveletTransform(LinearParent):
             wavelet=self.wavelet,
             mode=self.mode,
         )
+        
+        
+class CupyWaveletTransform(LinearParent):
+    """Wavelet transform using pytorch."""
+
+    wavedec3_keys = ["aad", "ada", "add", "daa", "dad", "dda", "ddd"]
+
+    def __init__(
+        self,
+        shape: tuple[int, ...],
+        wavelet: str,
+        level: int,
+        mode: str,
+    ):
+        if not TORCH_AVAILABLE or not CUPY_AVAILABLE:
+            raise RuntimeError("torch and cupy must be available")
+        self.wavelet = wavelet
+        self.level = level
+        self.shape = shape
+        self.mode = mode
+
+    def op(self, data: cp.array ) -> list[cp.array]:
+        """Apply the wavelet decomposition."""
+        data = change_backend(data, "torch")
+        if len(self.shape) == 2:
+            if torch.is_complex(data):
+                # 2D Complex
+                data_ = torch.view_as_real(data)
+                coeffs_ = ptwt.wavedec2(
+                    data_, self.wavelet, level=self.level, mode=self.mode, axes=(-3, -2)
+                )
+                # flatten list of tuple of tensors to a list of tensors
+                coeffs = [torch.view_as_complex(coeffs_[0].contiguous())] + [
+                    torch.view_as_complex(cc.contiguous())
+                    for c in coeffs_[1:]
+                    for cc in c
+                ]
+            else:
+                # 2D Real
+                coeffs_ = ptwt.wavedec2(
+                    data, self.wavelet, level=self.level, mode=self.mode, axes=(-2, -1)
+                )
+                coeffs = [coeffs_[0]] + [cc for c in coeffs_[1:] for cc in c]
+
+        elif torch.is_complex(data):
+            # 3D Complex
+            data_ = torch.view_as_real(data)
+            coeffs_ = ptwt.wavedec3(
+                data_,
+                self.wavelet,
+                level=self.level,
+                mode=self.mode,
+                axes=(-4, -3, -2),
+            )
+            # flatten list of tuple of tensors to a list of tensors
+            coeffs = [torch.view_as_complex(coeffs_[0].contiguous())] + [
+                torch.view_as_complex(cc.contiguous())
+                for c in coeffs_[1:].values()
+                for cc in c
+            ]
+
+        else:
+            # 3D Real
+            coeffs_ = ptwt.wavedec3(
+                data, self.wavelet, level=self.level, mode=self.mode, axes=(-3, -2, -1)
+            )
+            coeffs = [coeffs_[0]] + [cc for c in coeffs_[1:].values() for cc in c]
+        return change_backend(coeffs, "cupy")
+
+    def adj_op(self, coeffs: list[cp.array]) -> cp.array:
+        """Apply the wavelet recomposition."""
+        coeffs = change_backend(coeffs, "torch")
+        if len(self.shape) == 2:
+            if torch.is_complex(coeffs[0]):
+                ## 2D Complex ##
+                # list of tensor to list of tuple of tensor
+                coeffs = [torch.view_as_real(coeffs[0])] + [
+                    tuple(torch.view_as_real(coeffs[i + k]) for k in range(3))
+                    for i in range(1, len(coeffs) - 2, 3)
+                ]
+                data = ptwt.waverec2(coeffs, wavelet=self.wavelet, axes=(-3, -2))
+                data = torch.view_as_complex(data.contiguous())
+            else:
+                ## 2D Real ##
+                coeffs_ = [coeffs[0]] + [
+                    tuple(coeffs[i + k] for k in range(3))
+                    for i in range(1, len(coeffs) - 2, 3)
+                ]
+                data = ptwt.waverec2(coeffs_, wavelet=self.wavelet, axes=(-2, -1))
+        elif torch.is_complex(coeffs[0]):
+            ## 3D Complex ##
+            # list of tensor to list of tuple of tensor
+            coeffs = [torch.view_as_real(coeffs[0])] + [
+                {
+                    v: torch.view_as_real(coeffs[i + k])
+                    for k, v in enumerate(self.wavedec3_keys)
+                }
+                for i in range(1, len(coeffs) - 6, 7)
+            ]
+            data = ptwt.waverec3(coeffs, wavelet=self.wavelet, axes=(-4, -3, -2))
+            data = torch.view_as_complex(data.contiguous())
+        else:
+            ## 3D Real ##
+            coeffs_ = [coeffs[0]] + [
+                {v: coeffs[i + k] for k, v in enumerate(self.wavedec3_keys)}
+                for i in range(1, len(coeffs) - 6, 7)
+            ]
+            data = ptwt.waverec3(coeffs_, wavelet=self.wavelet, axes=(-3, -2, -1))
+        return change_backend(data, 'cupy')

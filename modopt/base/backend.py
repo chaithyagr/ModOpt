@@ -14,15 +14,19 @@ import numpy as np
 
 from modopt.interface.errors import warn
 
+  
+CUPY_AVAILABLE = True
+TORCH_AVAILABLE = True
+try:
+    import cupy as cp
+except ImportError: # pragma: no cover
+    CUPY_AVAILABLE = False
 try:
     import torch
     from torch.utils.dlpack import from_dlpack as torch_from_dlpack
     from torch.utils.dlpack import to_dlpack as torch_to_dlpack
-
-except ImportError:  # pragma: no cover
-    import_torch = False
-else:
-    import_torch = True
+except ImportError: # pragma: no cover
+    TORCH_AVAILABLE = False
 
 # Handle the compatibility with variable
 LIBRARIES = {
@@ -45,6 +49,9 @@ if util.find_spec('tensorflow') is not None:
     except ImportError:
         pass
 
+
+
+    
 
 def get_backend(backend):
     """Get backend.
@@ -182,7 +189,7 @@ def convert_to_tensor(input_data):
         If Torch package not found
 
     """
-    if not import_torch:
+    if not TORCH_AVAILABLE:
         raise ImportError(
             'Required version of Torch package not found'
             + 'see documentation for details: https://cea-cosmic.'
@@ -218,7 +225,7 @@ def convert_to_cupy_array(input_data):
         If Torch package not found
 
     """
-    if not import_torch:
+    if not TORCH_AVAILABLE:
         raise ImportError(
             'Required version of Torch package not found'
             + 'see documentation for details: https://cea-cosmic.'
