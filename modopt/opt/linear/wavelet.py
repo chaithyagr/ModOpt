@@ -13,10 +13,13 @@ from .base import LinearParent
 
 if TORCH_AVAILABLE:
     import torch
-    import pytorch_wavelets as ptwt
+    try:
+        import pytorch_wavelets as ptwt
+    except ImportError:
+        TORCH_AVAILABLE = False
+        warnings.warn("PyTorch Wavelet toolbox not installed. You may not use CupyWaveletTransform.")
 if CUPY_AVAILABLE:
     import cupy as cp
-
 
 
 pywt_available = True
